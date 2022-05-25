@@ -36,6 +36,13 @@ THEN information will auto update every 15 minutes.
 <img src="./assets/images/portfolio dashboard_mock-up.png"></img>
 
 ## APIs Utilized
+1. StockData.org
+Purpose: real-time stock price for the day
+https://www.stockdata.org/documentation
+
+2. Breaking News
+Purpose: get real-time breaking news for specific companies
+https://rapidapi.com/MyAllies/api/breaking-news/
 
 ## Deployed Application
 
