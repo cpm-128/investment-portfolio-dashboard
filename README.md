@@ -17,6 +17,9 @@ WHEN the daily average performance of my portfolio is calculated,
 THEN a visual is displayed on the screen adjacent to the market's overall daily performance to compare to as a benchmark.
 _**(to edit: the specific visual for my portfolio, may just be a number for the MVP**_
 
+WHEN my daily average performance is display on the screen,
+THEN it is color-coded to easily indicate if performance is up (green) or down (red).
+
 WHEN I enter stocks in the user input form field,
 THEN breaking news from the last 24 hrs is displayed for each company so that I may evaluate any impact it has on my holdings.
 
