@@ -19,3 +19,9 @@ footer {
     color: var(--secondary-color);
     font-weight: 600;
 }
+
+.error-message {
+    color: red;
+    font-style: italic;
+    background-color: lightcoral;
+}
