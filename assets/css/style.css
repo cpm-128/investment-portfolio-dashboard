@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #98D7C2;
+    --secondary-color: #167D7F;
+    --tertiary-color:#29A0B1;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer {
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
