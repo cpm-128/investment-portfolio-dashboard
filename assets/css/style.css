@@ -19,3 +19,24 @@ footer {
     color: var(--secondary-color);
     font-weight: 600;
 }
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.performanceDiv {
+    background-color: rgba(223, 228, 233, 0.937);
+    color: var(--secondary-color);
+    width: 220px;
+    height: 225px;
+    text-align: center;
+}
+
+#performanceRow {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
