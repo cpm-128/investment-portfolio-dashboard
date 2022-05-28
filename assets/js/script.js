@@ -2,6 +2,7 @@ var stockSymbolPlaceholder = "TSLA"
 var userStockFormEl = document.querySelector("#stockForm1");
 var stockNameInputEl = document.querySelector("#inline-stock-name");
 var holdingsInputEl = document.querySelector("#inline-shares");
+var inputErrorEl = document.querySelector("#input-error");
 
 var getUserStock = function(userStock) {
     // format the api url
@@ -33,13 +34,13 @@ var formSubmitHandler = function(event) {
 
     if (stockName) {
         getUserStock(stockName);
-        console.log(">>> remove error message >>>")
+        // remove any error message
+        inputErrorEl.innerHTML = "";
     } else {
-        console.log("ERROR >>>")
         var stockNameErrorEl = document.createElement("p");
         stockNameErrorEl.textContent = "Enter a valid stock name such as APPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
-        userStockFormEl.append(stockNameErrorEl);
+        inputErrorEl.append(stockNameErrorEl);
     }
 
     // **TO ADD: get value from # holdings element and pass to performance calculation
