@@ -32,11 +32,11 @@ var getUserStock1 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
                     displayStock1El.append(stockNameEl);
                 var regMarketPriceEl = document.createElement("p");
-                    regMarketPriceEl.textContent = "$" + regMarketPrice;
+                    regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock1El.append(regMarketPriceEl);
                 var regMarketChangeEl = document.createElement("p");
-                    regMarketChangeEl.textContent = (regMarketChange*100).toFixed(2) + "%";
+                    regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock1El.append(regMarketChangeEl);
 
@@ -117,11 +117,11 @@ var getUserStock2 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
                     displayStock2El.append(stockNameEl);
                 var regMarketPriceEl = document.createElement("p");
-                    regMarketPriceEl.textContent = "$" + regMarketPrice;
+                    regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketPriceEl);
-                var regMarketChangeEl = document.createElement("p");
-                    regMarketChangeEl.textContent = (regMarketChange*100).toFixed(2) + "%";
+            var regMarketChangeEl = document.createElement("p");
+                    regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketChangeEl);
 
@@ -202,11 +202,11 @@ var getUserStock3 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
                     displayStock3El.append(stockNameEl);
                 var regMarketPriceEl = document.createElement("p");
-                    regMarketPriceEl.textContent = "$" + regMarketPrice;
+                    regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketPriceEl);
                 var regMarketChangeEl = document.createElement("p");
-                    regMarketChangeEl.textContent = (regMarketChange*100).toFixed(2) + "%";
+                    regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketChangeEl);
 
@@ -287,11 +287,11 @@ var getUserStock4 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
                     displayStock4El.append(stockNameEl);
                 var regMarketPriceEl = document.createElement("p");
-                    regMarketPriceEl.textContent = "$" + regMarketPrice;
+                    regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock4El.append(regMarketPriceEl);
                 var regMarketChangeEl = document.createElement("p");
-                    regMarketChangeEl.textContent = (regMarketChange*100).toFixed(2) + "%";
+                    regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock4El.append(regMarketChangeEl);
 
@@ -372,11 +372,11 @@ var getUserStock5 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
                     displayStock5El.append(stockNameEl);
                 var regMarketPriceEl = document.createElement("p");
-                    regMarketPriceEl.textContent = "$" + regMarketPrice;
+                    regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketPriceEl);
                 var regMarketChangeEl = document.createElement("p");
-                    regMarketChangeEl.textContent = (regMarketChange*100).toFixed(2) + "%";
+                    regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketChangeEl);
 
