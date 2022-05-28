@@ -4,11 +4,10 @@ var stockNameInputEl = document.querySelector("#inline-stock-name");
 var holdingsInputEl = document.querySelector("#inline-shares");
 var inputErrorEl = document.querySelector("#input-error");
 
-var getUserStock = function(userStock) {
-    // format the api url
-    var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=5m&symbol=" + stockSymbolPlaceholder + "&range=1d&region=US&includePrePost=false&useYfid=true&includeAdjustedClose=true&events=capitalGain%2Cdiv%2Csplit" ;
 
-    // headers info from yhFinance
+
+var getUserStock = function(stockName) {
+    // format the api url
     const options = {
         method: 'GET',
         headers: {
@@ -16,12 +15,14 @@ var getUserStock = function(userStock) {
             'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
         }
     };
+    var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
 
     // make a request to the url
     fetch(yhFinanceApiUrl, options)
         .then(function(response) {
             response.json().then(function(data) {
-                console.log(data);
+                console.log(">> regular market price >>" , data.price.regularMarketPrice.raw);
+                console.log(">> regular market change % >>" , data.price.regularMarketChangePercent.fmt);
             });
         });
 };
@@ -38,7 +39,7 @@ var formSubmitHandler = function(event) {
         inputErrorEl.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as APPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputErrorEl.append(stockNameErrorEl);
     }
