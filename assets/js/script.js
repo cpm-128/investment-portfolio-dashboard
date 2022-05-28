@@ -1,6 +1,7 @@
 var stockSymbolPlaceholder = "TSLA"
 var userStockFormEl = document.querySelector("#stockForm1");
 var stockNameInputEl = document.querySelector("#inline-stock-name");
+var sharesHeldInputEl = document.querySelector("#inline-shares");
 var holdingsInputEl = document.querySelector("#inline-shares");
 var inputErrorEl = document.querySelector("#input-error");
 var displayStock1El = document.querySelector("#display-stock-1");
@@ -74,7 +75,12 @@ var formSubmitHandler = function(event) {
         inputErrorEl.append(stockNameErrorEl);
     }
 
-    // **TO ADD: get value from # holdings element and pass to performance calculation
+    // get value from shares input element
+    var sharesHeld = sharesHeldInputEl.value.trim();
+
+    if (sharesHeld) {
+        // **TO ADD: pass sharesHeld to performance calculation
+    };
 };
 
 userStockFormEl.addEventListener("submit" , formSubmitHandler);
