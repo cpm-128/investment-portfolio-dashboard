@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta httpe-equiv="X-A-compatible" content="ie-edge">
     <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,12 +16,188 @@
 
     <!-- Start User Stocks -->
     <div class="container mx-auto" id="stocksContainer">
-      <div class="flex flex-row" id="stocksRow">
-        <div id="stock1">Placeholder</div>
-        <div id="stock2">Placeholder</div>
-        <div id="stock3">Placeholder</div>
-        <div id="stock4">Placeholder</div>
-        <div id="stock5">Placeholder</div>
+      <div class="flex flex-row justify-around" id="stocksRow">
+
+        <!-- start stock1 -->
+        <div id="stock1">
+            <form class="w-full max-w-sm" id="stockForm1">
+
+              <!-- stock name input -->
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-2/3">
+                  <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="stock-input-1" type="text" placeholder="Stock Name">
+                </div>
+              </div>
+
+              <!-- # shares input -->
+              <div class="md:flex md:items-center mb-6">
+                <div class="md:w-2/3">
+                  <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="shares-input-1" type="number" placeholder="# of Shares">
+                </div>
+              </div>
+
+              <!-- submit button -->
+              <div class="md:items-center mb-6">
+                <div class="md:w-2/3">
+                  <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+                    id="stock-button-1">
+                    Submit
+                  </button>
+                </div>
+                <div id="input-error-1"></div>
+              </div>
+
+              <!-- display day's performance of individual stock -->
+              <div class="md:flex md:items-center mb-6" id="display-stock-1"></div>
+
+          </form>
+        </div>
+        <!-- end stock1 -->
+
+        <!-- start stock2 -->
+        <div id="stock2">
+          <form class="w-full max-w-sm" id="stockForm2">
+
+            <!-- stock name input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="stock-input-2" type="text" placeholder="Stock Name">
+              </div>
+            </div>
+
+            <!-- # shares input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="shares-input-2" type="number" placeholder="# of Shares">
+              </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="md:items-center mb-6">
+              <div class="md:w-2/3">
+                <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+                  id="stock-button-2">
+                    Submit
+                </button>
+              </div>
+              <div id="input-error-2"></div>
+            </div>
+
+            <!-- display day's performance of individual stock -->
+            <div class="md:flex md:items-center mb-6" id="display-stock-2"></div>
+
+          </form>
+        </div>
+        <!-- end stock2 -->
+
+        <!-- start stock3 -->
+        <div id="stock3">
+          <form class="w-full max-w-sm" id="stockForm3">
+
+            <!-- stock name input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="stock-input-3" type="text" placeholder="Stock Name">
+              </div>
+            </div>
+
+            <!-- # shares input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="shares-input-3" type="number" placeholder="# of Shares">
+              </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="md:items-center mb-6">
+              <div class="md:w-2/3">
+                <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+                  id="stock-button-3">
+                    Submit
+                </button>
+              </div>
+              <div id="input-error-3"></div>
+            </div>
+
+            <!-- display day's performance of individual stock -->
+            <div class="md:flex md:items-center mb-6" id="display-stock-3"></div>
+
+          </form>
+        </div>
+        <!-- end stock3 -->
+
+        <!-- start stock4 -->
+        <div id="stock4">
+          <form class="w-full max-w-sm" id="stockForm4">
+
+            <!-- stock name input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="stock-input-4" type="text" placeholder="Stock Name">
+              </div>
+            </div>
+
+            <!-- # shares input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="shares-input-4" type="number" placeholder="# of Shares">
+              </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="md:items-center mb-6">
+              <div class="md:w-2/3">
+                <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+                  id="stock-button-4">
+                    Submit
+                </button>
+              </div>
+              <div id="input-error-4"></div>
+            </div>
+
+            <!-- display day's performance of individual stock -->
+            <div class="md:flex md:items-center mb-6" id="display-stock-4"></div>
+
+          </form>
+        </div>
+        <!-- end stock4 -->
+
+        <!-- start stock5 -->
+        <div id="stock5">
+          <form class="w-full max-w-sm" id="stockForm5">
+
+            <!-- stock name input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="stock-input-5" type="text" placeholder="Stock Name">
+              </div>
+            </div>
+
+            <!-- # shares input -->
+            <div class="md:flex md:items-center mb-6">
+              <div class="md:w-2/3">
+                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="shares-input-5" type="number" placeholder="# of Shares">
+              </div>
+            </div>
+
+            <!-- submit button -->
+            <div class="md:items-center mb-6">
+              <div class="md:w-2/3">
+                <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+                  id="stock-button-5">
+                    Submit
+                </button>
+              </div>
+              <div id="input-error-5"></div>
+            </div>
+
+            <!-- display day's performance of individual stock -->
+            <div class="md:flex md:items-center mb-6" id="display-stock-5"></div>
+
+          </form>
+        </div>
+        <!-- end stock5 -->
+
       </div>
     </div>
     <!-- End User Stocks -->

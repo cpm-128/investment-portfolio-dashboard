@@ -67,4 +67,25 @@ footer {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.error-message {
+    color: red;
+    font-style: italic;
+    background-color: lightcoral;
+}
+
+.performance-negative {
+    color: red;
+    font-weight: bold;
+    background-color: rgba(240, 128, 128, 0.2);
+    border-radius: 4px;
+}
+
+.performance-positive {
+    color: green;
+    font-weight: bold;
+    background-color: rgba(144, 238, 144, 0.2);
+    border-radius: 4px;
 }
