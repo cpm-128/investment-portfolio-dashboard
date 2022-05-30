@@ -448,11 +448,12 @@ var getMarketPerf = function() {
                     console.log(">> market change % >>" , marketChange);
                 });
                 var marketPercent = (marketChange*100).toFixed(2) + "%";
+                console.log(marketPercent);
 
                 // display to page
                 marketPerfEl.innertext=marketPercent;
             }
         })
 }
-    
+
 getMarketPerf();
