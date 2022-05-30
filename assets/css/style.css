@@ -61,6 +61,8 @@ footer {
 #stocksContainer {
     background-color: var(--tertiary-color);
     padding-top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #performanceRow {
@@ -69,6 +71,10 @@ footer {
     color: var(--primary-color);
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+.stock-card {
+    padding: 5px;
 }
 
 #stock-button-1 , #stock-button-2 , #stock-button-3 , #stock-button-4 , #stock-button-5 {
@@ -82,19 +88,22 @@ footer {
 .error-message {
     color: red;
     font-style: italic;
-    background-color: lightcoral;
+    background-color: rgba(240, 128, 128, 0.2);
+    margin-top: 7px;
+    padding: 2px;
+    font-size: 10px;
 }
 
 .performance-negative {
     color: red;
     font-weight: bold;
     background-color: rgba(240, 128, 128, 0.2);
-    border-radius: 4px;
+    padding: 5px;
 }
 
 .performance-positive {
     color: green;
     font-weight: bold;
     background-color: rgba(144, 238, 144, 0.2);
-    border-radius: 4px;
+    padding: 5px;
 }
