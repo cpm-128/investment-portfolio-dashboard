@@ -106,6 +106,7 @@ footer {
     font-weight: bold;
     background-color: rgba(144, 238, 144, 0.2);
     padding: 5px;
+
 }
 
 /* NEWS FEED */
@@ -148,4 +149,7 @@ footer {
   @media only screen and (max-width: 768px) {
     .hmove { animation-duration: 20s; }
   }
+
+
+}
 
