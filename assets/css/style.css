@@ -106,4 +106,50 @@ footer {
     font-weight: bold;
     background-color: rgba(144, 238, 144, 0.2);
     padding: 5px;
+
 }
+
+/* NEWS FEED */
+  .hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: var(--tertiary-color);
+    /* position: sticky; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    }
+  
+ .bg-green-100 {
+      margin-left: 10px;
+      margin-top: 500px;
+      font-family: var(--primary-font);
+  }
+   
+  /* MOVING TICKER WRAPPER */
+  .hmove { display: flex; }
+  
+  /* ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-family: var(--secondary-font);
+  }
+   
+  /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 15s infinite; }
+  .hmove:hover { animation-play-state: paused; }
+
+  @media only screen and (max-width: 768px) {
+    .hmove { animation-duration: 20s; }
+  }
+
+
+}
+
