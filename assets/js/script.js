@@ -1,7 +1,7 @@
 // START STOCK 1
 var userStockForm1El = document.querySelector("#stockForm1");
 var stockNameInput1El = document.querySelector("#stock-input-1");
-var sharesHeldInput1El = document.querySelector("#share-input-1");
+var sharesHeldInput1El = document.querySelector("#shares-input-1");
 var inputError1El = document.querySelector("#input-error-1");
 var displayStock1El = document.querySelector("#display-stock-1");
 
@@ -63,8 +63,10 @@ var formSubmitHandler1 = function(event) {
     if (stockName) {
         getUserStock1(stockName);
         // remove any error message and any existing stock display
-        inputError1El.innerHTML = "";
-        displayStock1El.innerHTML = "";
+            inputError1El.innerHTML = "";
+            displayStock1El.innerHTML = "";
+        // set to localStorage
+            localStorage.setItem("stockTicker1", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
         stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
@@ -76,6 +78,9 @@ var formSubmitHandler1 = function(event) {
     var sharesHeld = sharesHeldInput1El.value.trim();
 
     if (sharesHeld) {
+        //set to locaStorage
+
+            localStorage.setItem("sharesHeld1", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
