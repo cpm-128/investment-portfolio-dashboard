@@ -70,6 +70,14 @@ footer {
     font-weight: 600;
 }
 
+#stock-button-1 , #stock-button-2 , #stock-button-3 , #stock-button-4 , #stock-button-5 {
+    background-color: var(--primary-color);
+}
+
+#stock-button-1:hover , #stock-button-2:hover , #stock-button-3:hover , #stock-button-4:hover , #stock-button-5:hover {
+    background-color: var(--secondary-color);
+}
+
 .error-message {
     color: red;
     font-style: italic;
