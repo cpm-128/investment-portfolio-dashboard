@@ -446,12 +446,11 @@ var getMarketPerf = function() {
                 response.json().then(function(data) {
                 var marketChange = data.price.regularMarketChangePercent.raw;
                     console.log(">> market change % >>" , marketChange);
-                });
                 var marketPercent = (marketChange*100).toFixed(2) + "%";
-                console.log(marketPercent);
-
+                    console.log(marketPercent);
                 // display to page
-                marketPerfEl.innertext=marketPercent;
+                    marketPerfEl.innertext=marketPercent;
+                });
             }
         })
 }
