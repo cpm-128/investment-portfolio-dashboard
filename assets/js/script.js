@@ -1,7 +1,7 @@
 // START STOCK 1
 var userStockForm1El = document.querySelector("#stockForm1");
 var stockNameInput1El = document.querySelector("#stock-input-1");
-var sharesHeldInput1El = document.querySelector("#shares-input-1");
+var sharesHeldInput1El = document.querySelector("#share-input-1");
 var inputError1El = document.querySelector("#input-error-1");
 var displayStock1El = document.querySelector("#display-stock-1");
 
@@ -63,13 +63,11 @@ var formSubmitHandler1 = function(event) {
     if (stockName) {
         getUserStock1(stockName);
         // remove any error message and any existing stock display
-            inputError1El.innerHTML = "";
-            displayStock1El.innerHTML = "";
-        // set to localStorage
-            localStorage.setItem("stockTicker1", stockName);
+        inputError1El.innerHTML = "";
+        displayStock1El.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError1El.append(stockNameErrorEl);
     }
@@ -78,8 +76,6 @@ var formSubmitHandler1 = function(event) {
     var sharesHeld = sharesHeldInput1El.value.trim();
 
     if (sharesHeld) {
-        //set to locaStorage
-            localStorage.setItem("sharesHeld1", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
@@ -90,7 +86,7 @@ userStockForm1El.addEventListener("submit" , formSubmitHandler1);
 // START STOCK 2
 var userStockForm2El = document.querySelector("#stockForm2");
 var stockNameInput2El = document.querySelector("#stock-input-2");
-var sharesHeldInput2El = document.querySelector("#shares-input-2");
+var sharesHeldInput2El = document.querySelector("#share-input-2");
 var inputError2El = document.querySelector("#input-error-2");
 var displayStock2El = document.querySelector("#display-stock-2");
 
@@ -152,13 +148,11 @@ var formSubmitHandler2 = function(event) {
     if (stockName) {
         getUserStock2(stockName);
         // remove any error message and any existing stock display
-            inputError2El.innerHTML = "";
-            displayStock2El.innerHTML = "";
-        // set to localStorage
-            localStorage.setItem("stockTicker2", stockName);
+        inputError2El.innerHTML = "";
+        displayStock2El.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError2El.append(stockNameErrorEl);
     }
@@ -167,8 +161,6 @@ var formSubmitHandler2 = function(event) {
     var sharesHeld = sharesHeldInput2El.value.trim();
 
     if (sharesHeld) {
-        // set to localStorage
-            localStorage.setItem("sharesHeld2", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
@@ -179,7 +171,7 @@ userStockForm2El.addEventListener("submit" , formSubmitHandler2);
 // START STOCK 3
 var userStockForm3El = document.querySelector("#stockForm3");
 var stockNameInput3El = document.querySelector("#stock-input-3");
-var sharesHeldInput3El = document.querySelector("#shares-input-3");
+var sharesHeldInput3El = document.querySelector("#share-input-3");
 var inputError3El = document.querySelector("#input-error-3");
 var displayStock3El = document.querySelector("#display-stock-3");
 
@@ -241,13 +233,11 @@ var formSubmitHandler3 = function(event) {
     if (stockName) {
         getUserStock3(stockName);
         // remove any error message and any existing stock display
-            inputError3El.innerHTML = "";
-            displayStock3El.innerHTML = "";
-        // set to localStorage
-            localStorage.setItem("stockTicker3", stockName);
+        inputError3El.innerHTML = "";
+        displayStock3El.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError3El.append(stockNameErrorEl);
     }
@@ -256,8 +246,6 @@ var formSubmitHandler3 = function(event) {
     var sharesHeld = sharesHeldInput3El.value.trim();
 
     if (sharesHeld) {
-         //set to locaStorage
-            localStorage.setItem("sharesHeld3", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
@@ -268,7 +256,7 @@ userStockForm3El.addEventListener("submit" , formSubmitHandler3);
 // START STOCK 4
 var userStockForm4El = document.querySelector("#stockForm4");
 var stockNameInput4El = document.querySelector("#stock-input-4");
-var sharesHeldInput4El = document.querySelector("#shares-input-4");
+var sharesHeldInput4El = document.querySelector("#share-input-4");
 var inputError4El = document.querySelector("#input-error-4");
 var displayStock4El = document.querySelector("#display-stock-4");
 
@@ -330,13 +318,11 @@ var formSubmitHandler4 = function(event) {
     if (stockName) {
         getUserStock4(stockName);
         // remove any error message and any existing stock display
-            inputError4El.innerHTML = "";
-            displayStock4El.innerHTML = "";
-        // set to localStorage
-            localStorage.setItem("stockTicker4", stockName);
+        inputError4El.innerHTML = "";
+        displayStock4El.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError4El.append(stockNameErrorEl);
     }
@@ -345,8 +331,6 @@ var formSubmitHandler4 = function(event) {
     var sharesHeld = sharesHeldInput4El.value.trim();
 
     if (sharesHeld) {
-        //set to locaStorage
-            localStorage.setItem("sharesHeld4", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
@@ -357,7 +341,7 @@ userStockForm4El.addEventListener("submit" , formSubmitHandler4);
 // START STOCK 5
 var userStockForm5El = document.querySelector("#stockForm5");
 var stockNameInput5El = document.querySelector("#stock-input-5");
-var sharesHeldInput5El = document.querySelector("#shares-input-5");
+var sharesHeldInput5El = document.querySelector("#share-input-5");
 var inputError5El = document.querySelector("#input-error-5");
 var displayStock5El = document.querySelector("#display-stock-5");
 
@@ -419,14 +403,12 @@ var formSubmitHandler5 = function(event) {
     if (stockName) {
         getUserStock5(stockName);
         // remove any error message and any existing stock display
-            inputError5El.innerHTML = "";
-            displayStock5El.innerHTML = "";
-        // set to localStorage
-            localStorage.setItem("stockTicker5", stockName);
+        inputError5El.innerHTML = "";
+        displayStock5El.innerHTML = "";
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
-        stockNameErrorEl.setAttribute("class" , "error-message");
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
+        stockNameErrorEl.setAttribute("class" , "error-message text-sm");
         inputError5El.append(stockNameErrorEl);
     }
 
@@ -434,8 +416,6 @@ var formSubmitHandler5 = function(event) {
     var sharesHeld = sharesHeldInput5El.value.trim();
 
     if (sharesHeld) {
-        //set to locaStorage
-            localStorage.setItem("sharesHeld5", sharesHeld);
         // **TO ADD: pass sharesHeld to performance calculation
     };
 };
