@@ -424,18 +424,15 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
 // START NEWS FEED
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+		'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
+	}
+};
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'content-type': 'text/plain',
-            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
-        },
-        // body: 'data'
-    };
-    
-    fetch('https://yh-finance.p.rapidapi.com/news/v2/list?region=US&snippetCount=28', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+fetch('https://yh-finance.p.rapidapi.com/news/v2/get-details?region=US', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
