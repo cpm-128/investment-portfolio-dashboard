@@ -91,9 +91,19 @@ footer {
 }
 
 /* NEWS FEED */
-.hwrap {
+  .hwrap {
     overflow: hidden; /* HIDE SCROLL BAR */
-    background: #eee;
+    background: var(--tertiary-color);
+    /* position: sticky; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    }
+  
+ .bg-green-100 {
+      margin-left: 10px;
+      margin-top: 500px;
+      font-family: var(--primary-font);
   }
    
   /* MOVING TICKER WRAPPER */
@@ -106,6 +116,7 @@ footer {
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
+    font-family: var(--secondary-font);
   }
    
   /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */

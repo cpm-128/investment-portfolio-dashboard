@@ -437,5 +437,5 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
     
     fetch('https://yh-finance.p.rapidapi.com/news/v2/list?region=US&snippetCount=28', options)
         .then(response => response.json())
-        .then(response => console.log(response.data.main.stream))
+        .then(response => console.log(response))
         .catch(err => console.error(err));
