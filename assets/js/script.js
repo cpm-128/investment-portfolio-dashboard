@@ -427,11 +427,12 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 const apiKey = "bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0";
 const apiHost = "yh-finance.p.rapidapi.com";
 const newsUrl = "https://yh-finance.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US";
-const tickerUrl = "https://yh-finance.p.rapidapi.com/market/get-popular-watchlists"
+const moreNewsUrl = "https://yh-finance.p.rapidapi.com/news/v2/list?region=US&snippetCount=28&s=AMZN"
 
 const options = {
 	method: 'GET',
 	headers: {
+        // 'content-type': 'text/plain',
 		'X-RapidAPI-Host': apiHost,
 		'X-RapidAPI-Key': apiKey
 	}
@@ -441,8 +442,8 @@ fetch(newsUrl, options).then((data)=>{
     
     return data.json();
 }).then((completeData)=>{
-    console.log(completeData);
-    // document.getElementById('root').innerHTML=completeData.data.contents[0].content.summary
+    // console.log(completeData);
+    // console.log(completeData.data.contents[0].content.summary);
     // 
     let data1="";
     completeData.data.contents.map((values)=> {
@@ -458,21 +459,31 @@ document.getElementById("newsContainer1").innerHTML=data1;
 	
     // fetch data for trending tickers
 
-    fetch(tickerUrl, options).then((res)=>{
-        // console.log(res);
+    const options2 = {
+        method: 'POST',
+        headers: {
+            // 'content-type': 'text/plain',
+            'X-RapidAPI-Host': apiHost,
+            'X-RapidAPI-Key': apiKey
+        }
+    };
+
+    fetch(moreNewsUrl, options2).then((res)=>{
+        console.log(res);
         return res.json();
     }).then((completeRes)=>{
-        console.log(completeRes.finance);
+        console.log(completeRes.data.main.stream[0].content.title);
 
-    //     let data2="";
-    //     completeRes.finance.result.map((values)=> {
-    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
-    //     <div class="hmove">
-    //     <div class="hitem">${values.otherSortOptions.sortTitle}</div>
-    //      </div></div>`
-    // });
-    // document.getElementById("newsContainer2").innerHTML=data2;
+        let data2="";
+        completeRes.data.main.stream.map((values1)=> {
+        data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+        rounded dark:bg-green-200 dark:text-green-900">BREAKING NEWS!</span>
+        <div class="hmove">
+        <div class="hitem">${values1.content.title} <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+        rounded dark:bg-green-200 dark:text-green-900">BREAKING NEWS!</span></div>
+         </div></div>`
+    });
+    document.getElementById("newsContainer2").innerHTML=data2;
     
     
     
