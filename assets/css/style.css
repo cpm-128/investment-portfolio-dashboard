@@ -60,6 +60,7 @@ footer {
 
 #stocksContainer {
     background-color: var(--tertiary-color);
+    padding-top: 25px;
 }
 
 #performanceRow {
