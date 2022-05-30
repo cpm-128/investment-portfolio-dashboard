@@ -60,6 +60,9 @@ footer {
 
 #stocksContainer {
     background-color: var(--tertiary-color);
+    padding-top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #performanceRow {
@@ -70,24 +73,39 @@ footer {
     font-weight: 600;
 }
 
+.stock-card {
+    padding: 5px;
+}
+
+#stock-button-1 , #stock-button-2 , #stock-button-3 , #stock-button-4 , #stock-button-5 {
+    background-color: var(--primary-color);
+}
+
+#stock-button-1:hover , #stock-button-2:hover , #stock-button-3:hover , #stock-button-4:hover , #stock-button-5:hover {
+    background-color: var(--secondary-color);
+}
+
 .error-message {
     color: red;
     font-style: italic;
-    background-color: lightcoral;
+    background-color: rgba(240, 128, 128, 0.2);
+    margin-top: 7px;
+    padding: 2px;
+    font-size: 10px;
 }
 
 .performance-negative {
     color: red;
     font-weight: bold;
     background-color: rgba(240, 128, 128, 0.2);
-    border-radius: 4px;
+    padding: 5px;
 }
 
 .performance-positive {
     color: green;
     font-weight: bold;
     background-color: rgba(144, 238, 144, 0.2);
-    border-radius: 4px;
+    padding: 5px;
 }
 
 /* NEWS FEED */
