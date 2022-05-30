@@ -69,7 +69,7 @@ var formSubmitHandler1 = function(event) {
             localStorage.setItem("stockTicker1", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError1El.append(stockNameErrorEl);
     }
@@ -158,7 +158,7 @@ var formSubmitHandler2 = function(event) {
             localStorage.setItem("stockTicker2", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError2El.append(stockNameErrorEl);
     }
@@ -247,7 +247,7 @@ var formSubmitHandler3 = function(event) {
             localStorage.setItem("stockTicker3", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError3El.append(stockNameErrorEl);
     }
@@ -336,7 +336,7 @@ var formSubmitHandler4 = function(event) {
             localStorage.setItem("stockTicker4", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
         stockNameErrorEl.setAttribute("class" , "error-message");
         inputError4El.append(stockNameErrorEl);
     }
@@ -425,8 +425,8 @@ var formSubmitHandler5 = function(event) {
             localStorage.setItem("stockTicker5", stockName);
     } else {
         var stockNameErrorEl = document.createElement("p");
-        stockNameErrorEl.textContent = "Enter a valid stock name such as AAPL or TSLA.";
-        stockNameErrorEl.setAttribute("class" , "error-message");
+        stockNameErrorEl.textContent = "Enter a valid stock ticker such as AAPL or TSLA.";
+        stockNameErrorEl.setAttribute("class" , "error-message text-sm");
         inputError5El.append(stockNameErrorEl);
     }
 
