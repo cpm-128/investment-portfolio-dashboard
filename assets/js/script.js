@@ -482,6 +482,7 @@ getUserStock1(stockTicker1);
 
 // get the regMarketChange for each stock
 
+// ACTAULLY, IF PAGE IS RELOADED EVERY BUTTON CLICK OR 15 MIN, JUST SET MARKETCHANGE TO LOCALSTORAGE OT PULL FROM
     // calculation
 var calculatePortfolioPerformance = function(stockChange1 , stockChange2 , stockChange3 , stockChange4 , stockChange5) {
     var calculation = (stockChange1 * sharesHeld1) + (stockChange2 * sharesHeld2) + (stockChange3 * sharesHeld3) + (stockChange4 * sharesHeld4) + (stockChange5 * sharesHeld5);
