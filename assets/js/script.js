@@ -408,8 +408,8 @@ var getUserStock5 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketChangeEl);
 
-            // set regMarketChange to localStorage
-                localStorage.setItem("regMarketChange5", regMarketChange);
+                // set regMarketChange to localStorage
+                    localStorage.setItem("regMarketChange5", regMarketChange);
 
                 // color code displayStock5El
                 if (regMarketChange > 0) {
@@ -459,6 +459,8 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
 // START CALCULATE PORTFOLIO PERFORMANCE
+var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
+
 var calculatePortfolioPerformance = function() {
 
     var regMarketChange1 = parseInt(localStorage.getItem("regMarketChange1"));
@@ -481,6 +483,17 @@ var calculatePortfolioPerformance = function() {
         console.log(">> regMarketChange5 >>" , regMarketChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , regMarketChange5*sharesHeld5);
         console.log(">> portfolio performance calculation >>" , calculation);
 
+    // append to page
+    var portfolioPerformanceCalculationEl = document.createElement("p");
+    portfolioPerformanceCalculationEl.textContent = (calculation*100).toFixed(2) + "%";
+    portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
+
+    // color code based on +/-
+    if (calculation > 0) {
+        portfolioPerformanceEl.setAttribute("class" , "performance-positive");
+    } else if (calculation < 0) {
+        portfolioPerformanceEl.setAttribute("class" , "performance-negative");
+    }
 };
 
 calculatePortfolioPerformance();
