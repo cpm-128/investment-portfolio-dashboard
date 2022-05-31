@@ -449,7 +449,15 @@ var getMarketPerf = function() {
                 var marketPercent = (marketChange*100).toFixed(2) + "%";
                     console.log(marketPercent);
                 // display to page
-                    marketPerfEl.innertext=marketPercent;
+                    marketPerfEl.textContent=marketPercent;
+                    if (marketPercent>0) {
+                        marketPerfEl.classList.remove("negative-percentage");
+                        marketPerfEl.classList.add("positive-percentage");
+                    }
+                    else {
+                        marketPerfEl.classList.remove("positive-percentage");
+                        marketPerfEl.classList.add("negative-percentage");
+                    }
                 });
             }
         })
