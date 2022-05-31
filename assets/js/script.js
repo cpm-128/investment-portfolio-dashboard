@@ -40,9 +40,8 @@ var getUserStock1 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock1El.append(regMarketChangeEl);
 
-                // send regMarketChange to calculatePortfolioPerformance();
-                    var stockChange1 = regMarketChange;
-                    calculatePortfolioPerformance(stockChange1);
+                // set regMarketChange to localStorage
+                    localStorage.setItem("regMarketChange1", regMarketChange);
 
                 // color code displayStock1El
                 if (regMarketChange > 0) {
@@ -133,9 +132,8 @@ var getUserStock2 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketChangeEl);
 
-            // send regMarketChange to calculatePortfolioPerformance();
-                var stockChange2 = regMarketChange;
-                calculatePortfolioPerformance(stockChange2);
+            // set regMarketChange to localStorage
+                localStorage.setItem("regMarketChange2", regMarketChange);
 
                 // color code displayStock2El
                 if (regMarketChange > 0) {
@@ -226,9 +224,8 @@ var getUserStock3 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketChangeEl);
 
-                // send regMarketChange to calculatePortfolioPerformance();
-                    var stockChange3 = regMarketChange;
-                    calculatePortfolioPerformance(stockChange3);
+            // set regMarketChange to localStorage
+                localStorage.setItem("regMarketChange3", regMarketChange);
 
                 // color code displayStock3El
                 if (regMarketChange > 0) {
@@ -319,9 +316,8 @@ var getUserStock4 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock4El.append(regMarketChangeEl);
 
-                // send regMarketChange to calculatePortfolioPerformance();
-                    var stockChange4 = regMarketChange;
-                    calculatePortfolioPerformance(stockChange4);
+            // set regMarketChange to localStorage
+                localStorage.setItem("regMarketChange4", regMarketChange);
 
                 // color code displayStock4El
                 if (regMarketChange > 0) {
@@ -412,9 +408,8 @@ var getUserStock5 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketChangeEl);
 
-                // send regMarketChange to calculatePortfolioPerformance();
-                    var stockChange5 = regMarketChange;
-                    calculatePortfolioPerformance(stockChange5);
+            // set regMarketChange to localStorage
+                localStorage.setItem("regMarketChange5", regMarketChange);
 
                 // color code displayStock5El
                 if (regMarketChange > 0) {
@@ -464,33 +459,26 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
 // START CALCULATE PORTFOLIO PERFORMANCE
+var calculatePortfolioPerformance = function() {
 
-// define global variables from storage
-var stockTicker1 = localStorage.getItem("stockTicker1");
-var sharesHeld1 = parseInt(localStorage.getItem("sharesHeld1"));
-var stockTicker2 = localStorage.getItem("stockTicker2");
-var sharesHeld2 = parseInt(localStorage.getItem("sharesHeld2"));
-var stockTicker3 = localStorage.getItem("stockTicker3");
-var sharesHeld3 = parseInt(localStorage.getItem("sharesHeld3"));
-var stockTicker4 = localStorage.getItem("stockTicker4");
-var sharesHeld4 = parseInt(localStorage.getItem("sharesHeld4"));
-var stockTicker5 = localStorage.getItem("stockTicker5");
-var sharesHeld5 = parseInt(localStorage.getItem("sharesHeld5"));
+    var regMarketChange1 = parseInt(localStorage.getItem("regMarketChange1"));
+    var sharesHeld1 = parseInt(localStorage.getItem("sharesHeld1"));
+    var regMarketChange2 = parseInt(localStorage.getItem("regMarketChange2"));
+    var sharesHeld2 = parseInt(localStorage.getItem("sharesHeld2"));
+    var regMarketChange3 = parseInt(localStorage.getItem("regMarketChange3"));
+    var sharesHeld3 = parseInt(localStorage.getItem("sharesHeld3"));
+    var regMarketChange4 = parseInt(localStorage.getItem("regMarketChange4"));
+    var sharesHeld4 = parseInt(localStorage.getItem("sharesHeld4"));
+    var regMarketChange5 = parseInt(localStorage.getItem("regMarketChange5"));
+    var sharesHeld5 = parseInt(localStorage.getItem("sharesHeld5"));
 
-// run each stockTicker through the getUserStock();
-getUserStock1(stockTicker1);
-
-// get the regMarketChange for each stock
-
-// ACTAULLY, IF PAGE IS RELOADED EVERY BUTTON CLICK OR 15 MIN, JUST SET MARKETCHANGE TO LOCALSTORAGE OT PULL FROM
     // calculation
-var calculatePortfolioPerformance = function(stockChange1 , stockChange2 , stockChange3 , stockChange4 , stockChange5) {
-    var calculation = (stockChange1 * sharesHeld1) + (stockChange2 * sharesHeld2) + (stockChange3 * sharesHeld3) + (stockChange4 * sharesHeld4) + (stockChange5 * sharesHeld5);
-        console.log(">> stockChange1 >>" , stockChange1 , (">> sharesHeld1 >>") , sharesHeld1 , ">> mult >>" , stockChange1*sharesHeld1);
-        console.log(">> stockChange2 >>" , stockChange2 , (">> sharesHeld2 >>") , sharesHeld2 , ">> mult >>" , stockChange2*sharesHeld2);
-        console.log(">> stockChange3 >>" , stockChange3 , (">> sharesHeld3 >>") , sharesHeld3 , ">> mult >>" , stockChange3*sharesHeld3);
-        console.log(">> stockChange4 >>" , stockChange4 , (">> sharesHeld4 >>") , sharesHeld4 , ">> mult >>" , stockChange4*sharesHeld4);
-        console.log(">> stockChange5 >>" , stockChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , stockChange5*sharesHeld5);
+    var calculation = (regMarketChange1 * sharesHeld1) + (regMarketChange2 * sharesHeld2) + (regMarketChange3 * sharesHeld3) + (regMarketChange4 * sharesHeld4) + (regMarketChange5 * sharesHeld5);
+        console.log(">> regMarketChange1 >>" , regMarketChange1 , (">> sharesHeld1 >>") , sharesHeld1 , ">> mult >>" , regMarketChange1*sharesHeld1);
+        console.log(">> regMarketChange2 >>" , regMarketChange2 , (">> sharesHeld2 >>") , sharesHeld2 , ">> mult >>" , regMarketChange2*sharesHeld2);
+        console.log(">> regMarketChange3 >>" , regMarketChange3 , (">> sharesHeld3 >>") , sharesHeld3 , ">> mult >>" , regMarketChange3*sharesHeld3);
+        console.log(">> regMarketChange4 >>" , regMarketChange4 , (">> sharesHeld4 >>") , sharesHeld4 , ">> mult >>" , regMarketChange4*sharesHeld4);
+        console.log(">> regMarketChange5 >>" , regMarketChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , regMarketChange5*sharesHeld5);
         console.log(">> portfolio performance calculation >>" , calculation);
 
 };
