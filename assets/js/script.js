@@ -490,9 +490,9 @@ var calculatePortfolioPerformance = function() {
 
     // color code based on +/-
     if (calculation > 0) {
-        portfolioPerformanceEl.setAttribute("class" , "performance-positive");
+        portfolioPerformanceEl.setAttribute("class" , "percentage-positive");
     } else if (calculation < 0) {
-        portfolioPerformanceEl.setAttribute("class" , "performance-negative");
+        portfolioPerformanceEl.setAttribute("class" , "percentage-negative");
     }
 };
 
