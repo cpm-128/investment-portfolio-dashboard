@@ -40,8 +40,10 @@ var getUserStock1 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock1El.append(regMarketChangeEl);
 
-                // set regMarketChange to localStorage
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
                     localStorage.setItem("regMarketChange1", regMarketChange);
+                    portfolioPerformanceEl.innerHTML = "";
+                    calculatePortfolioPerformance();
 
                 // color code displayStock1El
                 if (regMarketChange > 0) {
@@ -82,9 +84,7 @@ var formSubmitHandler1 = function(event) {
 
     if (sharesHeld) {
         //set to locaStorage
-            localStorage.setItem("sharesHeld1", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
-    };
+            localStorage.setItem("sharesHeld1", sharesHeld);    };
 };
 
 userStockForm1El.addEventListener("submit" , formSubmitHandler1);
@@ -132,8 +132,10 @@ var getUserStock2 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketChangeEl);
 
-            // set regMarketChange to localStorage
+            // set regMarketChange to localStorage and run calculatePortfolioPerformance();
                 localStorage.setItem("regMarketChange2", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
 
                 // color code displayStock2El
                 if (regMarketChange > 0) {
@@ -175,8 +177,7 @@ var formSubmitHandler2 = function(event) {
     if (sharesHeld) {
         // set to localStorage
             localStorage.setItem("sharesHeld2", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
-    };
+            };
 };
 
 userStockForm2El.addEventListener("submit" , formSubmitHandler2);
@@ -224,8 +225,10 @@ var getUserStock3 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketChangeEl);
 
-            // set regMarketChange to localStorage
+            // set regMarketChange to localStorage and run calculatePortfolioPerformance();
                 localStorage.setItem("regMarketChange3", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
 
                 // color code displayStock3El
                 if (regMarketChange > 0) {
@@ -267,7 +270,6 @@ var formSubmitHandler3 = function(event) {
     if (sharesHeld) {
          //set to locaStorage
             localStorage.setItem("sharesHeld3", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
@@ -316,8 +318,10 @@ var getUserStock4 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock4El.append(regMarketChangeEl);
 
-            // set regMarketChange to localStorage
+            // set regMarketChange to localStorage and run calculatePortfolioPerformance
                 localStorage.setItem("regMarketChange4", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
 
                 // color code displayStock4El
                 if (regMarketChange > 0) {
@@ -359,7 +363,6 @@ var formSubmitHandler4 = function(event) {
     if (sharesHeld) {
         //set to locaStorage
             localStorage.setItem("sharesHeld4", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
@@ -408,8 +411,10 @@ var getUserStock5 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketChangeEl);
 
-                // set regMarketChange to localStorage
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
                     localStorage.setItem("regMarketChange5", regMarketChange);
+                    portfolioPerformanceEl.innerHTML = "";
+                    calculatePortfolioPerformance();
 
                 // color code displayStock5El
                 if (regMarketChange > 0) {
@@ -451,7 +456,6 @@ var formSubmitHandler5 = function(event) {
     if (sharesHeld) {
         //set to locaStorage
             localStorage.setItem("sharesHeld5", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
@@ -497,4 +501,5 @@ var calculatePortfolioPerformance = function() {
 };
 
 calculatePortfolioPerformance();
+// **THIS ALSO NEEDS TO RUN EACH TIME THERE IS A NEW SUBMIT BUTTON CLICK
 // END CALCULATE PORTFOLIO PERFORMANCE
