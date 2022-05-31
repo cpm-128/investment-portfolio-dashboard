@@ -450,7 +450,7 @@ var getMarketPerf = function() {
                     console.log(marketPercent);
                 // display to page
                     marketPerfEl.textContent=marketPercent;
-                    if (marketPercent>0) {
+                    if (marketChange>0) {
                         // marketPerfEl.classList.remove("negative-percentage");
                         this.className="";
                         marketPerfEl.classList.add("positive-percentage");
