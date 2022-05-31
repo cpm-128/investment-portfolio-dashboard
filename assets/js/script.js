@@ -444,19 +444,18 @@ var getMarketPerf = function() {
         .then(function(response) {
             if(response.ok) {
                 response.json().then(function(data) {
+
+                // get S&P 500's market change and convert to %
                 var marketChange = data.price.regularMarketChangePercent.raw;
-                    console.log(">> market change % >>" , marketChange);
                 var marketPercent = (marketChange*100).toFixed(2) + "%";
-                    console.log(marketPercent);
+
                 // display to page
                     marketPerfEl.textContent=marketPercent;
                     if (marketChange>0) {
-                        // marketPerfEl.classList.remove("negative-percentage");
                         this.className="";
                         marketPerfEl.classList.add("positive-percentage");
                     }
                     else {
-                        // marketPerfEl.classList.remove("positive-percentage");
                         this.className="";
                         marketPerfEl.classList.add("negative-percentage");
                     }
