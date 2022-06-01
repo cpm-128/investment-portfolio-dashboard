@@ -462,6 +462,70 @@ var formSubmitHandler5 = function(event) {
 userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
+// START NEWS FEED
+const apiKey = "bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0";
+const apiHost = "ms-finance.p.rapidapi.com";
+const newsUrl = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
+const tickerUrl = "https://yh-finance.p.rapidapi.com/market/get-popular-watchlists"
+
+const options1 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': apiHost,
+		'X-RapidAPI-Key': apiKey
+	}
+};
+
+function newsDataFetch () {
+    fetch(newsUrl, options1).then((data)=>{
+    
+    return data.json();
+}).then((completeData)=>{
+    // console.log(completeData);
+    // document.getElementById('root').innerHTML=completeData.data.contents[0].content.summary
+    // 
+    let data1="";
+
+    completeData.map((values)=> {
+        data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+        rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
+        <div class="hmove">
+        <div class="hitem">${values.title} ${values.sourceName}</div>
+         </div></div>`
+    });
+document.getElementById("newsContainer1").innerHTML=data1;
+
+}).catch(err => console.error(err));
+}
+newsDataFetch();
+	
+    // fetch data for trending tickers
+
+    fetch(tickerUrl, options).then((res)=>{
+        // console.log(res);
+        return res.json();
+    }).then((completeRes)=>{
+        console.log(completeRes.finance);
+
+    //     let data2="";
+    //     completeRes.finance.result.map((values)=> {
+    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
+    //     <div class="hmove">
+    //     <div class="hitem">${values.otherSortOptions.sortTitle}</div>
+    //      </div></div>`
+    // });
+    // document.getElementById("newsContainer2").innerHTML=data2;
+    
+    
+    
+    
+    
+    
+    }).catch(err => console.error(err));
+
+
+
 // START CALCULATE PORTFOLIO PERFORMANCE
 var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
 
