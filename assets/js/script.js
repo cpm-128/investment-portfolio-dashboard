@@ -231,7 +231,7 @@ var getUserStock3 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketChangeEl);
 
-            // set regMarketChange to localStorage and run calculatePortfolioPerformance();
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
                 localStorage.setItem("regMarketChange3", regMarketChange);
                 portfolioPerformanceEl.innerHTML = "";
                 calculatePortfolioPerformance();
@@ -636,16 +636,14 @@ window.onload = function loadInputs() {
         stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
         displayStock1El.append(regMarketPriceEl);
     var regMarketChangeEl = document.createElement("p");
-        regMarketChangeEl.textContent = "Market Change: " + localStorage.getItem("regMarketChange1");
+        regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange1")*100).toFixed(2) + "%";
         stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
         displayStock1El.append(regMarketChangeEl);
     // color code displayStock1El
     if ((localStorage.getItem("regMarketChange1")) >= 0) {
         displayStock1El.setAttribute("class" , "performance-positive");
-        console.log("POSITIVE");
     } else {
         displayStock1El.setAttribute("class" , "performance-negative");
-        console.log("NEGATIVE");
     }
 
     document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
@@ -659,27 +657,78 @@ window.onload = function loadInputs() {
         stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
         displayStock2El.append(regMarketPriceEl);
     var regMarketChangeEl = document.createElement("p");
-        regMarketChangeEl.textContent = "Market Change: " + localStorage.getItem("regMarketChange2");
+        regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange2")*100).toFixed(2) + "%";
         stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
         displayStock2El.append(regMarketChangeEl);
     // color code displayStock2El
     if ((localStorage.getItem("regMarketChange2")) >= 0) {
         displayStock2El.setAttribute("class" , "performance-positive");
-        console.log("POSITIVE");
     } else {
         displayStock2El.setAttribute("class" , "performance-negative");
-        console.log("NEGATIVE");
     }
 
     document.querySelector("#stock-input-3").value = localStorage.getItem("stockTicker3");
-    document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld4");
+    document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld3");
+    var stockNameEl = document.createElement("h3");
+        stockNameEl.textContent = localStorage.getItem("stockTicker3");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+        displayStock3El.append(stockNameEl);
+    var regMarketPriceEl = document.createElement("p");
+        regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice3");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock3El.append(regMarketPriceEl);
+    var regMarketChangeEl = document.createElement("p");
+        regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange3")*100).toFixed(2) + "%";
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock3El.append(regMarketChangeEl);
+    // color code displayStock2El
+    if ((localStorage.getItem("regMarketChange3")) >= 0) {
+        displayStock3El.setAttribute("class" , "performance-positive");
+    } else {
+        displayStock3El.setAttribute("class" , "performance-negative");
+    }
 
     document.querySelector("#stock-input-4").value = localStorage.getItem("stockTicker4");
     document.querySelector("#shares-input-4").value = localStorage.getItem("sharesHeld4");
+    var stockNameEl = document.createElement("h3");
+        stockNameEl.textContent = localStorage.getItem("stockTicker4");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+        displayStock4El.append(stockNameEl);
+    var regMarketPriceEl = document.createElement("p");
+        regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice4");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock4El.append(regMarketPriceEl);
+    var regMarketChangeEl = document.createElement("p");
+        regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange4")*100).toFixed(2) + "%";;
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock4El.append(regMarketChangeEl);
+    // color code displayStock2El
+    if ((localStorage.getItem("regMarketChange4")) >= 0) {
+        displayStock4El.setAttribute("class" , "performance-positive");
+    } else {
+        displayStock4El.setAttribute("class" , "performance-negative");
+    }
 
     document.querySelector("#stock-input-5").value = localStorage.getItem("stockTicker5");
     document.querySelector("#shares-input-5").value = localStorage.getItem("sharesHeld5");
-
+    var stockNameEl = document.createElement("h3");
+        stockNameEl.textContent = localStorage.getItem("stockTicker5");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+        displayStock5El.append(stockNameEl);
+    var regMarketPriceEl = document.createElement("p");
+        regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice5");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock5El.append(regMarketPriceEl);
+    var regMarketChangeEl = document.createElement("p");
+        regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange5")*100).toFixed(2) + "%";
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock5El.append(regMarketChangeEl);
+    // color code displayStock2El
+    if ((localStorage.getItem("regMarketChange5")) >= 0) {
+        displayStock5El.setAttribute("class" , "performance-positive");
+    } else {
+        displayStock5El.setAttribute("class" , "performance-negative");
+    }
 };
 
 getMarketPerf();
