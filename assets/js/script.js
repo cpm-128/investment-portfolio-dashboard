@@ -46,7 +46,7 @@ var getUserStock1 = function(stockName) {
                     calculatePortfolioPerformance();
 
                 // color code displayStock1El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock1El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -138,7 +138,7 @@ var getUserStock2 = function(stockName) {
                 calculatePortfolioPerformance();
 
                 // color code displayStock2El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock2El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -231,7 +231,7 @@ var getUserStock3 = function(stockName) {
                 calculatePortfolioPerformance();
 
                 // color code displayStock3El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock3El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -324,7 +324,7 @@ var getUserStock4 = function(stockName) {
                 calculatePortfolioPerformance();
 
                 // color code displayStock4El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock4El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -417,7 +417,7 @@ var getUserStock5 = function(stockName) {
                     calculatePortfolioPerformance();
 
                 // color code displayStock5El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock5El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
