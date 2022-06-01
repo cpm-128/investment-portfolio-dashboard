@@ -503,3 +503,46 @@ var calculatePortfolioPerformance = function() {
 calculatePortfolioPerformance();
 // **THIS ALSO NEEDS TO RUN EACH TIME THERE IS A NEW SUBMIT BUTTON CLICK
 // END CALCULATE PORTFOLIO PERFORMANCE
+
+// START MARKET PERFORMANCE (S&P 500)
+var getMarketPerf = function() {
+
+    var marketPerfEl = document.querySelector("#market-change");
+    console.log(marketPerfEl);
+
+    // format the api url
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+        }
+    };
+    var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=^GSPC&region=US";
+
+    // make a request to the url
+    fetch(yhFinanceApiUrl, options)
+        .then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+
+                // get S&P 500's market change and convert to %
+                var marketChange = data.price.regularMarketChangePercent.raw;
+                var marketPercent = (marketChange*100).toFixed(2) + "%";
+
+                // display to page
+                    marketPerfEl.textContent=marketPercent;
+                    if (marketChange>0) {
+                        this.className="";
+                        marketPerfEl.classList.add("positive-percentage");
+                    }
+                    else {
+                        this.className="";
+                        marketPerfEl.classList.add("negative-percentage");
+                    }
+                });
+            }
+        })
+}
+
+getMarketPerf();
