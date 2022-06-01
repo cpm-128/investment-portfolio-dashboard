@@ -501,7 +501,7 @@ newsDataFetch();
 	
     // fetch data for trending tickers
 
-    fetch(tickerUrl, options).then((res)=>{
+    fetch(tickerUrl, options1).then((res)=>{
         // console.log(res);
         return res.json();
     }).then((completeRes)=>{
@@ -608,5 +608,28 @@ var getMarketPerf = function() {
             }
         })
 }
+
+// function reloadP() {
+//     sessionStorage.setItem("reloading", "true");
+//     document.location.reload();
+// }
+
+window.onload = function loadInputs() {
+    document.querySelector("#stock-input-1").value = localStorage.getItem("stockTicker1");
+    document.querySelector("#shares-input-1").value = localStorage.getItem("sharesHeld1");
+
+    document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
+    document.querySelector("#shares-input-2").value = localStorage.getItem("sharesHeld2");
+
+    document.querySelector("#stock-input-3").value = localStorage.getItem("stockTicker3");
+    document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld4");
+
+    document.querySelector("#stock-input-4").value = localStorage.getItem("stockTicker4");
+    document.querySelector("#shares-input-4").value = localStorage.getItem("sharesHeld4");
+
+    document.querySelector("#stock-input-5").value = localStorage.getItem("stockTicker5");
+    document.querySelector("#shares-input-5").value = localStorage.getItem("sharesHeld5");
+
+};
 
 getMarketPerf();
