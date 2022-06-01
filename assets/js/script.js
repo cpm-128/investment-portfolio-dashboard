@@ -463,7 +463,7 @@ userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
 // START NEWS FEED
-const options = {
+const options1 = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
@@ -484,10 +484,7 @@ function assembleHeadlines(allHeadlines) {
 
         // console.log(allHeadlines[i])
         // fmtString = allHeadlines[i];
-        console.log(fmtString)
-
-        // containerDiv.appendChild(newDiv);
-        // console.log(fmtString);
+        
         
     }
     let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
@@ -496,14 +493,14 @@ function assembleHeadlines(allHeadlines) {
         <div class="hitem">${allHeadlines}</div>
          </div></div>`;
          document.getElementById("newsContainer1").innerHTML=data1;
-    console.log(fmtString);
+    
 }
 
 async function makeRequest() {
     const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
 
     try {
-        var msg = await fetch(url, options);
+        var msg = await fetch(url, options1);
 
         if (msg.ok) {
             msg = await msg.json();
@@ -527,29 +524,15 @@ async function getHeadlines() {
     for (let i = 0; i < response.length; i++) {
         // console.log(response[i]["title"]);
         headlines[i] = response[i]["title"];
-        console.log(headlines[i])
+        // console.log(headlines[i])
+        
     }
     assembleHeadlines(headlines);
-    // let data1="";
-    
-
-    // headlines.map((values) => {
-    //     data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
-    //     <div class="hmove">
-    //     <div class="hitem">${headlines[i].title}</div>
-    //      </div></div>`
-    // });
-    
-    // console.log(headlines)
-    // document.getElementById("newsContainer1").innerHTML=data1
-
-    // assembleHeadlines(headlines);
 }
+
 getHeadlines();
-
-
 //  NEWS FEED END
+
 // START CALCULATE PORTFOLIO PERFORMANCE
 var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
 
