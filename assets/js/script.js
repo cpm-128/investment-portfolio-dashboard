@@ -127,7 +127,7 @@ var getUserStock2 = function(stockName) {
                     regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketPriceEl);
-            var regMarketChangeEl = document.createElement("p");
+                var regMarketChangeEl = document.createElement("p");
                     regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketChangeEl);
