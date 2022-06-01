@@ -45,6 +45,9 @@ var getUserStock1 = function(stockName) {
                     portfolioPerformanceEl.innerHTML = "";
                     calculatePortfolioPerformance();
 
+                // set regMarketPrice to localStorage
+                    localStorage.setItem("regMarketPrice1", regMarketPrice);
+
                 // color code displayStock1El
                 if (regMarketChange >= 0) {
                     displayStock1El.setAttribute("class" , "performance-positive");
@@ -609,14 +612,29 @@ var getMarketPerf = function() {
         })
 }
 
-// function reloadP() {
-//     sessionStorage.setItem("reloading", "true");
-//     document.location.reload();
-// }
-
 window.onload = function loadInputs() {
     document.querySelector("#stock-input-1").value = localStorage.getItem("stockTicker1");
     document.querySelector("#shares-input-1").value = localStorage.getItem("sharesHeld1");
+    var stockNameEl = document.createElement("h3");
+        stockNameEl.textContent = localStorage.getItem("stockTicker1");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+        displayStock1El.append(stockNameEl);
+    var regMarketPriceEl = document.createElement("p");
+        regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice1");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock1El.append(regMarketPriceEl);
+    var regMarketChangeEl = document.createElement("p");
+        regMarketChangeEl.textContent = "Market Change: " + localStorage.getItem("regMarketChange1");
+        stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+        displayStock1El.append(regMarketChangeEl);
+    // color code displayStock1El
+    if ((localStorage.getItem("regMarketChange1")) >= 0) {
+        displayStock1El.setAttribute("class" , "performance-positive");
+        console.log("POSITIVE");
+    } else {
+        displayStock1El.setAttribute("class" , "performance-negative");
+        console.log("NEGATIVE");
+    }
 
     document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
     document.querySelector("#shares-input-2").value = localStorage.getItem("sharesHeld2");
