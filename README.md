@@ -43,9 +43,9 @@ THEN information will auto update every 15 minutes.
 
 
 ## APIs Utilized
-1. StockData.org
+1. Yahoo Finance
 Purpose: real-time stock price for the day
-https://www.stockdata.org/documentation
+https://rapidapi.com/apidojo/api/yh-finance/
 
 2. Breaking News
 Purpose: get real-time breaking news for specific companies
