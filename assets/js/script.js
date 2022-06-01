@@ -462,7 +462,6 @@ var formSubmitHandler5 = function(event) {
 userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
-<<<<<<< HEAD
 // START NEWS FEED
 const apiKey = "bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0";
 const apiHost = "ms-finance.p.rapidapi.com";
@@ -527,7 +526,6 @@ newsDataFetch();
 
 
 
-=======
 // START CALCULATE PORTFOLIO PERFORMANCE
 var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
 
@@ -612,4 +610,3 @@ var getMarketPerf = function() {
 }
 
 getMarketPerf();
->>>>>>> develop

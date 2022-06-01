@@ -115,7 +115,6 @@ footer {
     font-weight: bold;
     background-color: rgba(144, 238, 144, 0.2);
     padding: 5px;
-<<<<<<< HEAD
 
 }
 
@@ -159,12 +158,6 @@ footer {
   @media only screen and (max-width: 768px) {
     .hmove { animation-duration: 20s; }
   }
-
-
-
-=======
-    border-radius: 4px;
-}
 
 .percentage-positive {
     color: rgb(71, 182, 71);
@@ -215,5 +208,4 @@ footer {
     border-radius: 10px;
     padding: 30px;
 }
->>>>>>> develop
 
