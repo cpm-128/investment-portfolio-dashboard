@@ -11,7 +11,7 @@ var getUserStock1 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -100,7 +100,7 @@ var getUserStock2 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -189,7 +189,7 @@ var getUserStock3 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -278,7 +278,7 @@ var getUserStock4 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -367,7 +367,7 @@ var getUserStock5 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -442,3 +442,46 @@ var formSubmitHandler5 = function(event) {
 
 userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
+
+// START MARKET PERFORMANCE (S&P 500)
+var getMarketPerf = function() {
+
+    var marketPerfEl = document.querySelector("#market-change");
+    console.log(marketPerfEl);
+
+    // format the api url
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+        }
+    };
+    var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=^GSPC&region=US";
+
+    // make a request to the url
+    fetch(yhFinanceApiUrl, options)
+        .then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+
+                // get S&P 500's market change and convert to %
+                var marketChange = data.price.regularMarketChangePercent.raw;
+                var marketPercent = (marketChange*100).toFixed(2) + "%";
+
+                // display to page
+                    marketPerfEl.textContent=marketPercent;
+                    if (marketChange>0) {
+                        this.className="";
+                        marketPerfEl.classList.add("positive-percentage");
+                    }
+                    else {
+                        this.className="";
+                        marketPerfEl.classList.add("negative-percentage");
+                    }
+                });
+            }
+        })
+}
+
+getMarketPerf();
