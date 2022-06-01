@@ -135,7 +135,7 @@ footer {
   }
    
   /* MOVING TICKER WRAPPER */
-  .hmove { display: flex; }
+  .hmove { display:flex }
   
   /* ITEMS - INTO A LONG HORIZONTAL ROW */
   .hitem {
@@ -145,6 +145,7 @@ footer {
     padding: 10px;
     text-align: center;
     font-family: var(--secondary-font);
+    display: inline-block;
   }
    
   /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
