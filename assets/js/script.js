@@ -467,7 +467,7 @@ const options1 = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
-		'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
+		'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
 	}
 };
 
