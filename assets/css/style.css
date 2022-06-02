@@ -60,6 +60,9 @@ footer {
 
 #stocksContainer {
     background-color: var(--tertiary-color);
+    padding-top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #performanceRow {
@@ -70,17 +73,32 @@ footer {
     font-weight: 600;
 }
 
+.stock-card {
+    padding: 5px;
+}
+
+#stock-button-1 , #stock-button-2 , #stock-button-3 , #stock-button-4 , #stock-button-5 {
+    background-color: var(--primary-color);
+}
+
+#stock-button-1:hover , #stock-button-2:hover , #stock-button-3:hover , #stock-button-4:hover , #stock-button-5:hover {
+    background-color: var(--secondary-color);
+}
+
 .error-message {
     color: red;
     font-style: italic;
-    background-color: lightcoral;
+    background-color: rgba(240, 128, 128, 0.2);
+    margin-top: 7px;
+    padding: 2px;
+    font-size: 10px;
 }
 
 .performance-negative {
     color: red;
     font-weight: bold;
     background-color: rgba(240, 128, 128, 0.2);
-    border-radius: 4px;
+    padding: 5px;
 }
 
 .performance-positive {
@@ -111,7 +129,7 @@ footer {
     border-color: var(--secondary-color);
 }
 
-#stockGrid {
+/*#stockGrid {
     padding: 2px;
     width: 100%;
 }
@@ -122,5 +140,51 @@ footer {
     background-color: var(--secondary-color);
     border-radius: 10px;
     padding: 30px;
-}
+    padding: 5px;
+
+}*/
+
+/* NEWS FEED */
+  .hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: var(--tertiary-color);
+    /* position: sticky; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    border-radius: 4px;
+  }
+
+
+  .bg-green-100 {
+      margin-left: 10px;
+      margin-top: 500px;
+      font-family: var(--primary-font);
+  }
+
+  /* MOVING TICKER WRAPPER */
+  .hmove { display: flex;  }
+
+  /* ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-family: var(--secondary-font);
+  }
+
+  /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 15s infinite; }
+  .hmove:hover { animation-play-state: paused; }
+
+  @media only screen and (max-width: 768px) {
+    .hmove { animation-duration: 20s; }
+  }
+
 
