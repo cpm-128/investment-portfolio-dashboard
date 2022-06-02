@@ -156,7 +156,7 @@ footer {
 /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
 @keyframes tickerh {
     0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: translate3d(-1000%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }
   .hmove { animation: tickerh linear 15s infinite; }
   .hmove:hover { animation-play-state: paused; }

@@ -11,7 +11,7 @@ var getUserStock1 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -103,7 +103,7 @@ var getUserStock2 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -196,7 +196,7 @@ var getUserStock3 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -289,7 +289,7 @@ var getUserStock4 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -382,7 +382,7 @@ var getUserStock5 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
