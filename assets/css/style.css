@@ -51,7 +51,7 @@ footer {
 }
 
 .positive-percentage {
-    color: rgb(71, 182, 71);
+    color: green;
     font-family: var(--primary-font);
     font-size: 2rem;
     text-align: center;
@@ -59,7 +59,7 @@ footer {
 }
 
 .negative-percentage {
-    color: rgb(216, 76, 76);
+    color: red;
     font-family: var(--primary-font);
     font-size: 2rem;
     text-align: center;
