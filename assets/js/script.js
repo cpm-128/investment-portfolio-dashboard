@@ -472,19 +472,12 @@ const options1 = {
 };
 
 function assembleHeadlines(allHeadlines) {
-    
-    let fmtString = "";
-    // let containerDiv = document.createElement("DIV");
-    // containerDiv.className = "bg-green-100 text-green-800 text-sm";
-
     for (let i = 0; i < allHeadlines.length; i++) {
         let newDiv = document.createElement("DIV");
         //set classname
         newDiv.innerText = allHeadlines[i];
 
         // console.log(allHeadlines[i])
-        // fmtString = allHeadlines[i];
-        
         
     }
     let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
