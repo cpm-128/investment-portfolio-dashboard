@@ -477,113 +477,6 @@ var formSubmitHandler5 = function(event) {
 userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
-// START NEWS FEED
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
-		'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
-	}
-};
-
-function assembleHeadlines(allHeadlines) {
-    
-    let fmtString = "";
-    // let containerDiv = document.createElement("DIV");
-    // containerDiv.className = "bg-green-100 text-green-800 text-sm";
-
-    for (let i = 0; i < allHeadlines.length; i++) {
-        let newDiv = document.createElement("DIV");
-        //set classname
-        newDiv.innerText = allHeadlines[i];
-
-        // console.log(allHeadlines[i])
-        // fmtString = allHeadlines[i];
-        console.log(fmtString)
-
-        // containerDiv.appendChild(newDiv);
-        // console.log(fmtString);
-        
-    }
-    let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-        rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
-        <div class="hmove">
-        <div class="hitem">${allHeadlines}</div>
-         </div></div>`;
-         document.getElementById("newsContainer1").innerHTML=data1;
-    console.log(fmtString);
-}
-
-async function makeRequest() {
-    const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
-
-    try {
-        var msg = await fetch(url, options);
-
-        if (msg.ok) {
-            msg = await msg.json();
-        }
-        else {
-            console.log("GOT A 400 ERROR");
-        }
-    }
-    catch (err) {
-        console.log(err);
-    }
-
-    return msg;
-}
-
-
-
-async function getHeadlines() {
-    const response = await makeRequest();
-    var headlines = [];
-    // console.log(response.length);
-    for (let i = 0; i < response.length; i++) {
-        // console.log(response[i]["title"]);
-        headlines[i] = response[i]["title"];
-        console.log(headlines[i])
-    }
-    assembleHeadlines(headlines);
-    // let data1="";
-    
-
-    // headlines.map((values) => {
-    //     data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
-
-newsDataFetch();
-	
-    // fetch data for trending tickers
-
-    fetch(tickerUrl, options1).then((res)=>{
-        // console.log(res);
-        return res.json();
-    }).then((completeRes)=>{
-        console.log(completeRes.finance);
-
-    //     let data2="";
-    //     completeRes.finance.result.map((values)=> {
-    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
-
-    //     <div class="hmove">
-    //     <div class="hitem">${headlines[i].title}</div>
-    //      </div></div>`
-    // });
-    
-    // console.log(headlines)
-    // document.getElementById("newsContainer1").innerHTML=data1
-
-    // assembleHeadlines(headlines);
-}
-getHeadlines();
-
-
-
-//  NEWS FEED END
-
 // START CALCULATE PORTFOLIO PERFORMANCE
 var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
 
@@ -665,7 +558,7 @@ var getMarketPerf = function() {
                 });
             }
         })
-}
+};
 
 // when page reloads, load and display inputs and fetched data from localStorage
 window.onload = function loadInputs() {
@@ -787,3 +680,111 @@ window.onload = function loadInputs() {
 };
 
 getMarketPerf();
+
+// START NEWS FEED
+var startNewsFeed = function() {
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
+		'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
+	}
+};
+
+function assembleHeadlines(allHeadlines) {
+    
+    let fmtString = "";
+    // let containerDiv = document.createElement("DIV");
+    // containerDiv.className = "bg-green-100 text-green-800 text-sm";
+
+    for (let i = 0; i < allHeadlines.length; i++) {
+        let newDiv = document.createElement("DIV");
+        //set classname
+        newDiv.innerText = allHeadlines[i];
+
+        // console.log(allHeadlines[i])
+        // fmtString = allHeadlines[i];
+        console.log(fmtString)
+
+        // containerDiv.appendChild(newDiv);
+        // console.log(fmtString);
+        
+    }
+    let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+        rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
+        <div class="hmove">
+        <div class="hitem">${allHeadlines}</div>
+         </div></div>`;
+         document.getElementById("newsContainer1").innerHTML=data1;
+    console.log(fmtString);
+};
+
+async function makeRequest() {
+    const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
+
+    try {
+        var msg = await fetch(url, options);
+
+        if (msg.ok) {
+            msg = await msg.json();
+        }
+        else {
+            console.log("GOT A 400 ERROR");
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+
+    return msg;
+};
+
+
+
+async function getHeadlines() {
+    const response = await makeRequest();
+    var headlines = [];
+    // console.log(response.length);
+    for (let i = 0; i < response.length; i++) {
+        // console.log(response[i]["title"]);
+        headlines[i] = response[i]["title"];
+        console.log(headlines[i])
+    }
+    assembleHeadlines(headlines);
+    // let data1="";
+};
+
+    // headlines.map((values) => {
+    //     data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+    //     rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
+
+newsDataFetch();
+	
+    // fetch data for trending tickers
+
+    fetch(tickerUrl, options1).then((res)=>{
+        // console.log(res);
+        return res.json();
+    }).then((completeRes)=>{
+        console.log(completeRes.finance);
+
+    //     let data2="";
+    //     completeRes.finance.result.map((values)=> {
+    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
+
+    //     <div class="hmove">
+    //     <div class="hitem">${headlines[i].title}</div>
+    //      </div></div>`
+    // });
+    
+    // console.log(headlines)
+    // document.getElementById("newsContainer1").innerHTML=data1
+
+    // assembleHeadlines(headlines);
+});
+
+getHeadlines();
+};
+startNewsFeed();
+//  NEWS FEED END
