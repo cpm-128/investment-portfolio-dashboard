@@ -683,33 +683,25 @@ getMarketPerf();
 
 // START NEWS FEED
 var startNewsFeed = function() {
-const options = {
+const options1 = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
-		'X-RapidAPI-Key': 'bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0'
+		'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
 	}
 };
 
 function assembleHeadlines(allHeadlines) {
     
     let fmtString = "";
-    // let containerDiv = document.createElement("DIV");
-    // containerDiv.className = "bg-green-100 text-green-800 text-sm";
 
     for (let i = 0; i < allHeadlines.length; i++) {
         let newDiv = document.createElement("DIV");
-        //set classname
         newDiv.innerText = allHeadlines[i];
 
         // console.log(allHeadlines[i])
-        // fmtString = allHeadlines[i];
         console.log(fmtString)
-
-        // containerDiv.appendChild(newDiv);
-        // console.log(fmtString);
-        
-    }
+ }
     let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
         rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
         <div class="hmove">
@@ -720,10 +712,10 @@ function assembleHeadlines(allHeadlines) {
 };
 
 async function makeRequest() {
-    const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
+    const apiUrl = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
 
     try {
-        var msg = await fetch(url, options);
+        var msg = await fetch(apiUrl, options1);
 
         if (msg.ok) {
             msg = await msg.json();
@@ -751,12 +743,7 @@ async function getHeadlines() {
         console.log(headlines[i])
     }
     assembleHeadlines(headlines);
-    // let data1="";
 };
-
-    // headlines.map((values) => {
-    //     data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
 
 newsDataFetch();
 	
@@ -768,20 +755,7 @@ newsDataFetch();
     }).then((completeRes)=>{
         console.log(completeRes.finance);
 
-    //     let data2="";
-    //     completeRes.finance.result.map((values)=> {
-    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
-
-    //     <div class="hmove">
-    //     <div class="hitem">${headlines[i].title}</div>
-    //      </div></div>`
-    // });
-    
     // console.log(headlines)
-    // document.getElementById("newsContainer1").innerHTML=data1
-
-    // assembleHeadlines(headlines);
 });
 
 getHeadlines();
