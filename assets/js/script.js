@@ -682,40 +682,37 @@ window.onload = function loadInputs() {
 getMarketPerf();
 
 // START NEWS FEED
-var startNewsFeed = function() {
 const options1 = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
-		'X-RapidAPI-Key': '2f71527ccfmsh48f6da4b056ca19p1a5c94jsna345157ec35e'
+		'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
 	}
 };
 
 function assembleHeadlines(allHeadlines) {
-    
-    let fmtString = "";
-
     for (let i = 0; i < allHeadlines.length; i++) {
         let newDiv = document.createElement("DIV");
+        //set classname
         newDiv.innerText = allHeadlines[i];
 
         // console.log(allHeadlines[i])
-        console.log(fmtString)
- }
+        
+    }
     let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
         rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
         <div class="hmove">
         <div class="hitem">${allHeadlines}</div>
          </div></div>`;
          document.getElementById("newsContainer1").innerHTML=data1;
-    console.log(fmtString);
-};
+    
+}
 
 async function makeRequest() {
-    const apiUrl = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
+    const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
 
     try {
-        var msg = await fetch(apiUrl, options1);
+        var msg = await fetch(url, options1);
 
         if (msg.ok) {
             msg = await msg.json();
@@ -729,8 +726,7 @@ async function makeRequest() {
     }
 
     return msg;
-};
-
+}
 
 
 async function getHeadlines() {
@@ -740,26 +736,11 @@ async function getHeadlines() {
     for (let i = 0; i < response.length; i++) {
         // console.log(response[i]["title"]);
         headlines[i] = response[i]["title"];
-        console.log(headlines[i])
+        // console.log(headlines[i])
+        
     }
     assembleHeadlines(headlines);
-};
-
-newsDataFetch();
-	
-    // fetch data for trending tickers
-
-    fetch(tickerUrl, options1).then((res)=>{
-        // console.log(res);
-        return res.json();
-    }).then((completeRes)=>{
-        console.log(completeRes.finance);
-
-    // console.log(headlines)
-});
+}
 
 getHeadlines();
-};
-
-startNewsFeed();
-//  NEWS FEED END
+// NEWS FEED END

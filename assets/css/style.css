@@ -146,8 +146,9 @@ footer {
     text-align: center;
     font-family: var(--secondary-font);
     display: inline-block;
-    /* max-height: 100px; */
-    /* word-wrap: break-word; */
+    white-space:nowrap;
+    max-height: 100px;
+    word-wrap: break-word;
   }
    
   /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
