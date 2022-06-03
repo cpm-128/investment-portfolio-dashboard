@@ -786,5 +786,6 @@ newsDataFetch();
 
 getHeadlines();
 };
+
 startNewsFeed();
 //  NEWS FEED END
