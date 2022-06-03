@@ -3,6 +3,7 @@ An investment portfolio dashboard that will run in the browser and feature dynam
 
 ## User Story
 AS AN investor, I WANT to see how my portfolio is performing and see breaking news related to my investments SO THAT I can evaluate my portfolio's performance compared to the market and make stock decisions.
+
 ## Acceptance Criteria
 GIVEN a portfolio dashboard for 5 selected stocks,
 
@@ -26,10 +27,9 @@ THEN stocks and shares a reloaded from my last session.
 
 ## Mock-up
 <img src="./assets/images/portfolio dashboard_mock-up.png"></img>
-<img src="./assets/images/wireframe.png"></img>
 
 ## Wire Frame
-
+<img src="./assets/images/wireframe.png"></img>
 
 ## APIs Utilized
 1. Yahoo Finance
@@ -42,11 +42,17 @@ https://rapidapi.com/apidojo/api/ms-finance/details
 
 ## Deployed Application
 
-Live URL:
+Live URL: https://cpm-128.github.io/investment-portfolio-dashboard/
 
-Repo URL:
+Repo URL: https://github.com/cpm-128/investment-portfolio-dashboard
+
+Slide Deck: https://docs.google.com/presentation/d/1k4afwfDozcnew_TYOQx_yNhiT5vHPlI3EmYqO7GMzzQ/edit?usp=sharing
 
 Screenshots:
+
+<img src="assets/images/dashboard_blank.png"></img>
+
+<img src="assets/images/dashboard_stock-input.png"></img>
 
 ## Future Updates
 - WHEN breaking news is loaded on the page,
