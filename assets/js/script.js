@@ -505,7 +505,7 @@ var calculatePortfolioPerformance = function() {
     // append to page
     var portfolioPerformanceCalculationEl = document.createElement("p");
     if (!calculation) {
-        console.log(">> PERFORMANCE UNAVAILABLE >>")
+        // console.log(">> PERFORMANCE UNAVAILABLE >>")
         portfolioPerformanceCalculationEl.textContent = "";
         portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
     } else {
@@ -569,8 +569,8 @@ var getMarketPerf = function() {
 
 // when page reloads, load and display inputs and fetched data from localStorage
 window.onload = function loadInputs() {
+    // Stock 1
     if (localStorage.getItem("stockTicker1")!=null) {
-        // Stock 1
         document.querySelector("#stock-input-1").value = localStorage.getItem("stockTicker1");
         document.querySelector("#shares-input-1").value = localStorage.getItem("sharesHeld1");
         var stockNameEl = document.createElement("h3");
@@ -591,9 +591,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock1El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker2")!=null) {
-        // Stock 2
+    };
+    // Stock 2
+    if (localStorage.getItem("stockTicker2")!=null) {
         document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
         document.querySelector("#shares-input-2").value = localStorage.getItem("sharesHeld2");
         var stockNameEl = document.createElement("h3");
@@ -614,9 +614,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock2El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker3")!=null) {
-        // Stock 3
+    };
+    // Stock 3
+    if (localStorage.getItem("stockTicker3")!=null) {
         document.querySelector("#stock-input-3").value = localStorage.getItem("stockTicker3");
         document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld3");
         var stockNameEl = document.createElement("h3");
@@ -637,9 +637,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock3El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker4")!=null) {
-        // Stock 4
+    };
+    // Stock 4
+    if (localStorage.getItem("stockTicker4")!=null) {
         document.querySelector("#stock-input-4").value = localStorage.getItem("stockTicker4");
         document.querySelector("#shares-input-4").value = localStorage.getItem("sharesHeld4");
         var stockNameEl = document.createElement("h3");
@@ -660,9 +660,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock4El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker5")!=null) {
-        // Stock 5
+    };
+    // Stock 5
+    if (localStorage.getItem("stockTicker5")!=null) {
         document.querySelector("#stock-input-5").value = localStorage.getItem("stockTicker5");
         document.querySelector("#shares-input-5").value = localStorage.getItem("sharesHeld5");
         var stockNameEl = document.createElement("h3");
