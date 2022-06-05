@@ -11,7 +11,7 @@ var getUserStock1 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -40,8 +40,16 @@ var getUserStock1 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock1El.append(regMarketChangeEl);
 
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
+                    localStorage.setItem("regMarketChange1", regMarketChange);
+                    portfolioPerformanceEl.innerHTML = "";
+                    calculatePortfolioPerformance();
+
+                // set regMarketPrice to localStorage
+                    localStorage.setItem("regMarketPrice1", regMarketPrice);
+
                 // color code displayStock1El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock1El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -79,9 +87,7 @@ var formSubmitHandler1 = function(event) {
 
     if (sharesHeld) {
         //set to locaStorage
-            localStorage.setItem("sharesHeld1", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
-    };
+            localStorage.setItem("sharesHeld1", sharesHeld);    };
 };
 
 userStockForm1El.addEventListener("submit" , formSubmitHandler1);
@@ -100,7 +106,7 @@ var getUserStock2 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -124,13 +130,21 @@ var getUserStock2 = function(stockName) {
                     regMarketPriceEl.textContent = "Market Price: $" + regMarketPrice;
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketPriceEl);
-            var regMarketChangeEl = document.createElement("p");
+                var regMarketChangeEl = document.createElement("p");
                     regMarketChangeEl.textContent = "Market Change: " + (regMarketChange*100).toFixed(2) + "%";
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock2El.append(regMarketChangeEl);
 
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
+                localStorage.setItem("regMarketChange2", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
+
+                // set regMarketPrice to localStorage
+                localStorage.setItem("regMarketPrice2", regMarketPrice);
+
                 // color code displayStock2El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock2El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -169,8 +183,7 @@ var formSubmitHandler2 = function(event) {
     if (sharesHeld) {
         // set to localStorage
             localStorage.setItem("sharesHeld2", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
-    };
+            };
 };
 
 userStockForm2El.addEventListener("submit" , formSubmitHandler2);
@@ -189,7 +202,7 @@ var getUserStock3 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -218,8 +231,16 @@ var getUserStock3 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock3El.append(regMarketChangeEl);
 
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
+                localStorage.setItem("regMarketChange3", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
+
+                // set regMarketPrice to localStorage
+                localStorage.setItem("regMarketPrice3", regMarketPrice);
+
                 // color code displayStock3El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock3El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -258,7 +279,6 @@ var formSubmitHandler3 = function(event) {
     if (sharesHeld) {
          //set to locaStorage
             localStorage.setItem("sharesHeld3", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
@@ -278,7 +298,7 @@ var getUserStock4 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -307,8 +327,16 @@ var getUserStock4 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock4El.append(regMarketChangeEl);
 
+            // set regMarketChange to localStorage and run calculatePortfolioPerformance
+                localStorage.setItem("regMarketChange4", regMarketChange);
+                portfolioPerformanceEl.innerHTML = "";
+                calculatePortfolioPerformance();
+
+                // set regMarketPrice to localStorage
+                localStorage.setItem("regMarketPrice4", regMarketPrice);
+
                 // color code displayStock4El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock4El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -347,7 +375,6 @@ var formSubmitHandler4 = function(event) {
     if (sharesHeld) {
         //set to locaStorage
             localStorage.setItem("sharesHeld4", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
@@ -367,7 +394,7 @@ var getUserStock5 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '895f022c33msh5649ec36fc22d45p1991b5jsn5881cd33897c'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
@@ -396,8 +423,16 @@ var getUserStock5 = function(stockName) {
                     stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
                     displayStock5El.append(regMarketChangeEl);
 
+                // set regMarketChange to localStorage and run calculatePortfolioPerformance();
+                    localStorage.setItem("regMarketChange5", regMarketChange);
+                    portfolioPerformanceEl.innerHTML = "";
+                    calculatePortfolioPerformance();
+
+                // set regMarketPrice to localStorage
+                localStorage.setItem("regMarketPrice5", regMarketPrice);
+
                 // color code displayStock5El
-                if (regMarketChange > 0) {
+                if (regMarketChange >= 0) {
                     displayStock5El.setAttribute("class" , "performance-positive");
                     console.log("POSITIVE");
                 } else if (regMarketChange < 0) {
@@ -436,67 +471,276 @@ var formSubmitHandler5 = function(event) {
     if (sharesHeld) {
         //set to locaStorage
             localStorage.setItem("sharesHeld5", sharesHeld);
-        // **TO ADD: pass sharesHeld to performance calculation
     };
 };
 
 userStockForm5El.addEventListener("submit" , formSubmitHandler5);
 // END STOCK 5
 
-// START NEWS FEED
-const apiKey = "bed5eead03msh40b97f0839cd9a0p1c8202jsnc640c9a06bc0";
-const apiHost = "yh-finance.p.rapidapi.com";
-const newsUrl = "https://yh-finance.p.rapidapi.com/news/v2/get-details?uuid=9803606d-a324-3864-83a8-2bd621e6ccbd&region=US";
-const tickerUrl = "https://yh-finance.p.rapidapi.com/market/get-popular-watchlists"
+// START CALCULATE PORTFOLIO PERFORMANCE
+var portfolioPerformanceEl = document.querySelector("#portfolio-performance-calculation");
 
-const options = {
+var calculatePortfolioPerformance = function() {
+
+    var regMarketChange1 = localStorage.getItem("regMarketChange1");
+    var sharesHeld1 = parseInt(localStorage.getItem("sharesHeld1"));
+    var regMarketChange2 = localStorage.getItem("regMarketChange2");
+    var sharesHeld2 = parseInt(localStorage.getItem("sharesHeld2"));
+    var regMarketChange3 = localStorage.getItem("regMarketChange3");
+    var sharesHeld3 = parseInt(localStorage.getItem("sharesHeld3"));
+    var regMarketChange4 = localStorage.getItem("regMarketChange4");
+    var sharesHeld4 = parseInt(localStorage.getItem("sharesHeld4"));
+    var regMarketChange5 = localStorage.getItem("regMarketChange5");
+    var sharesHeld5 = parseInt(localStorage.getItem("sharesHeld5"));
+
+    // calculation
+    var calculation = (regMarketChange1 * sharesHeld1) + (regMarketChange2 * sharesHeld2) + (regMarketChange3 * sharesHeld3) + (regMarketChange4 * sharesHeld4) + (regMarketChange5 * sharesHeld5);
+        console.log(">> regMarketChange1 >>" , regMarketChange1 , (">> sharesHeld1 >>") , sharesHeld1 , ">> mult >>" , regMarketChange1*sharesHeld1);
+        console.log(">> regMarketChange2 >>" , regMarketChange2 , (">> sharesHeld2 >>") , sharesHeld2 , ">> mult >>" , regMarketChange2*sharesHeld2);
+        console.log(">> regMarketChange3 >>" , regMarketChange3 , (">> sharesHeld3 >>") , sharesHeld3 , ">> mult >>" , regMarketChange3*sharesHeld3);
+        console.log(">> regMarketChange4 >>" , regMarketChange4 , (">> sharesHeld4 >>") , sharesHeld4 , ">> mult >>" , regMarketChange4*sharesHeld4);
+        console.log(">> regMarketChange5 >>" , regMarketChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , regMarketChange5*sharesHeld5);
+        console.log(">> portfolio performance calculation >>" , calculation);
+
+    // append to page
+    var portfolioPerformanceCalculationEl = document.createElement("p");
+    portfolioPerformanceCalculationEl.textContent = (calculation*100).toFixed(2) + "%";
+    portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
+
+    // color code based on +/-
+    if (calculation > 0) {
+        portfolioPerformanceEl.setAttribute("class" , "percentage-positive");
+    } else if (calculation < 0) {
+        portfolioPerformanceEl.setAttribute("class" , "percentage-negative");
+    }
+};
+
+calculatePortfolioPerformance();
+// **THIS ALSO NEEDS TO RUN EACH TIME THERE IS A NEW SUBMIT BUTTON CLICK
+// END CALCULATE PORTFOLIO PERFORMANCE
+
+// START MARKET PERFORMANCE (S&P 500)
+var getMarketPerf = function() {
+
+    var marketPerfEl = document.querySelector("#market-change");
+    console.log(marketPerfEl);
+
+    // format the api url
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
+        }
+    };
+    var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=^GSPC&region=US";
+
+    // make a request to the url
+    fetch(yhFinanceApiUrl, options)
+        .then(function(response) {
+            if(response.ok) {
+                response.json().then(function(data) {
+
+                // get S&P 500's market change and convert to %
+                var marketChange = data.price.regularMarketChangePercent.raw;
+                var marketPercent = (marketChange*100).toFixed(2) + "%";
+
+                // display to page
+                    marketPerfEl.textContent=marketPercent;
+                    if (marketChange>0) {
+                        this.className="";
+                        marketPerfEl.classList.add("positive-percentage");
+                    }
+                    else {
+                        this.className="";
+                        marketPerfEl.classList.add("negative-percentage");
+                    }
+                });
+            }
+        })
+};
+
+// when page reloads, load and display inputs and fetched data from localStorage
+window.onload = function loadInputs() {
+    if (localStorage.getItem("stockTicker1")!=null) {
+        // Stock 1
+        document.querySelector("#stock-input-1").value = localStorage.getItem("stockTicker1");
+        document.querySelector("#shares-input-1").value = localStorage.getItem("sharesHeld1");
+        var stockNameEl = document.createElement("h3");
+            stockNameEl.textContent = localStorage.getItem("stockTicker1");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+            displayStock1El.append(stockNameEl);
+        var regMarketPriceEl = document.createElement("p");
+            regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice1");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock1El.append(regMarketPriceEl);
+        var regMarketChangeEl = document.createElement("p");
+            regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange1")*100).toFixed(2) + "%";
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock1El.append(regMarketChangeEl);
+        // color code displayStock1El
+        if ((localStorage.getItem("regMarketChange1")) >= 0) {
+            displayStock1El.setAttribute("class" , "performance-positive");
+        } else {
+            displayStock1El.setAttribute("class" , "performance-negative");
+        }
+    }
+    else if (localStorage.getItem("stockTicker2")!=null) {
+        // Stock 2
+        document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
+        document.querySelector("#shares-input-2").value = localStorage.getItem("sharesHeld2");
+        var stockNameEl = document.createElement("h3");
+            stockNameEl.textContent = localStorage.getItem("stockTicker2");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+            displayStock2El.append(stockNameEl);
+        var regMarketPriceEl = document.createElement("p");
+            regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice2");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock2El.append(regMarketPriceEl);
+        var regMarketChangeEl = document.createElement("p");
+            regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange2")*100).toFixed(2) + "%";
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock2El.append(regMarketChangeEl);
+        // color code displayStock2El
+        if ((localStorage.getItem("regMarketChange2")) >= 0) {
+            displayStock2El.setAttribute("class" , "performance-positive");
+        } else {
+            displayStock2El.setAttribute("class" , "performance-negative");
+        }
+    }
+    else if (localStorage.getItem("stockTicker3")!=null) {
+        // Stock 3
+        document.querySelector("#stock-input-3").value = localStorage.getItem("stockTicker3");
+        document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld3");
+        var stockNameEl = document.createElement("h3");
+            stockNameEl.textContent = localStorage.getItem("stockTicker3");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+            displayStock3El.append(stockNameEl);
+        var regMarketPriceEl = document.createElement("p");
+            regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice3");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock3El.append(regMarketPriceEl);
+        var regMarketChangeEl = document.createElement("p");
+            regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange3")*100).toFixed(2) + "%";
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock3El.append(regMarketChangeEl);
+        // color code displayStock3El
+        if ((localStorage.getItem("regMarketChange3")) >= 0) {
+            displayStock3El.setAttribute("class" , "performance-positive");
+        } else {
+            displayStock3El.setAttribute("class" , "performance-negative");
+        }
+    }
+    else if (localStorage.getItem("stockTicker4")!=null) {
+        // Stock 4
+        document.querySelector("#stock-input-4").value = localStorage.getItem("stockTicker4");
+        document.querySelector("#shares-input-4").value = localStorage.getItem("sharesHeld4");
+        var stockNameEl = document.createElement("h3");
+            stockNameEl.textContent = localStorage.getItem("stockTicker4");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+            displayStock4El.append(stockNameEl);
+        var regMarketPriceEl = document.createElement("p");
+            regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice4");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock4El.append(regMarketPriceEl);
+        var regMarketChangeEl = document.createElement("p");
+            regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange4")*100).toFixed(2) + "%";;
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock4El.append(regMarketChangeEl);
+        // color code displayStock4El
+        if ((localStorage.getItem("regMarketChange4")) >= 0) {
+            displayStock4El.setAttribute("class" , "performance-positive");
+        } else {
+            displayStock4El.setAttribute("class" , "performance-negative");
+        }
+    }
+    else if (localStorage.getItem("stockTicker5")!=null) {
+        // Stock 5
+        document.querySelector("#stock-input-5").value = localStorage.getItem("stockTicker5");
+        document.querySelector("#shares-input-5").value = localStorage.getItem("sharesHeld5");
+        var stockNameEl = document.createElement("h3");
+            stockNameEl.textContent = localStorage.getItem("stockTicker5");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm align-center");
+            displayStock5El.append(stockNameEl);
+        var regMarketPriceEl = document.createElement("p");
+            regMarketPriceEl.textContent = "Market Price: $" + localStorage.getItem("regMarketPrice5");
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock5El.append(regMarketPriceEl);
+        var regMarketChangeEl = document.createElement("p");
+            regMarketChangeEl.textContent = "Market Change: " + (localStorage.getItem("regMarketChange5")*100).toFixed(2) + "%";
+            stockNameEl.setAttribute = ("class" , "w-full max-w-sm");
+            displayStock5El.append(regMarketChangeEl);
+        // color code displayStock5El
+        if ((localStorage.getItem("regMarketChange5")) >= 0) {
+            displayStock5El.setAttribute("class" , "performance-positive");
+        } else {
+            displayStock5El.setAttribute("class" , "performance-negative");
+        }
+    }
+};
+
+getMarketPerf();
+
+// START NEWS FEED
+const options1 = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Host': apiHost,
-		'X-RapidAPI-Key': apiKey
+		'X-RapidAPI-Host': 'ms-finance.p.rapidapi.com',
+		'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
 	}
 };
 
-fetch(newsUrl, options).then((data)=>{
-    
-    return data.json();
-}).then((completeData)=>{
-    console.log(completeData);
-    // document.getElementById('root').innerHTML=completeData.data.contents[0].content.summary
-    // 
-    let data1="";
-    completeData.data.contents.map((values)=> {
-        data1=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
+function assembleHeadlines(allHeadlines) {
+    for (let i = 0; i < allHeadlines.length; i++) {
+        let newDiv = document.createElement("DIV");
+        //set classname
+        newDiv.innerText = allHeadlines[i];
+
+        // console.log(allHeadlines[i])
+        
+    }
+    let data1= `<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
         rounded dark:bg-green-200 dark:text-green-900">STOCK NEWS</span>
         <div class="hmove">
-        <div class="hitem">${values.content.summary}</div>
-         </div></div>`
-    });
-document.getElementById("newsContainer1").innerHTML=data1;
+        <div class="hitem">${allHeadlines}</div>
+         </div></div>`;
+         document.getElementById("newsContainer1").innerHTML=data1;
+    
+}
 
-}).catch(err => console.error(err));
-	
-    // fetch data for trending tickers
+async function makeRequest() {
+    const url = "https://ms-finance.p.rapidapi.com/news/list?performanceId=0P0000OQN8";
 
-    fetch(tickerUrl, options).then((res)=>{
-        // console.log(res);
-        return res.json();
-    }).then((completeRes)=>{
-        console.log(completeRes.finance);
+    try {
+        var msg = await fetch(url, options1);
 
-    //     let data2="";
-    //     completeRes.finance.result.map((values)=> {
-    //     data2=`<div class="hwrap container mx-auto"><span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 
-    //     rounded dark:bg-green-200 dark:text-green-900">NEWS FEED</span>
-    //     <div class="hmove">
-    //     <div class="hitem">${values.otherSortOptions.sortTitle}</div>
-    //      </div></div>`
-    // });
-    // document.getElementById("newsContainer2").innerHTML=data2;
-    
-    
-    
-    
-    
-    
-    }).catch(err => console.error(err));
+        if (msg.ok) {
+            msg = await msg.json();
+        }
+        else {
+            console.log("GOT A 400 ERROR");
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+
+    return msg;
+}
+
+
+async function getHeadlines() {
+    const response = await makeRequest();
+    var headlines = [];
+    // console.log(response.length);
+    for (let i = 0; i < response.length; i++) {
+        // console.log(response[i]["title"]);
+        headlines[i] = response[i]["title"];
+        // console.log(headlines[i])
+        
+    }
+    assembleHeadlines(headlines);
+}
+
+getHeadlines();
+// NEWS FEED END

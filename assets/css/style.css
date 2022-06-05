@@ -50,8 +50,16 @@ footer {
     text-decoration: underline;
 }
 
-.percentage {
-    color: rgb(71, 182, 71);
+.positive-percentage {
+    color: green;
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.negative-percentage {
+    color: red;
     font-family: var(--primary-font);
     font-size: 2rem;
     text-align: center;
@@ -99,6 +107,7 @@ footer {
     font-weight: bold;
     background-color: rgba(240, 128, 128, 0.2);
     padding: 5px;
+    border-radius: 4px;
 }
 
 .performance-positive {
@@ -126,7 +135,7 @@ footer {
   }
    
   /* MOVING TICKER WRAPPER */
-  .hmove { display: flex; }
+  .hmove { display:flex }
   
   /* ITEMS - INTO A LONG HORIZONTAL ROW */
   .hitem {
@@ -136,6 +145,10 @@ footer {
     padding: 10px;
     text-align: center;
     font-family: var(--secondary-font);
+    display: inline-block;
+    white-space:nowrap;
+    max-height: 100px;
+    word-wrap: break-word;
   }
    
   /* ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
@@ -150,6 +163,53 @@ footer {
     .hmove { animation-duration: 20s; }
   }
 
+.percentage-positive {
+    color: rgb(71, 182, 71);
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
 
+.percentage-negative {
+    color: red;
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+#newsContainer {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.newsTitle {
+    font: var(--secondary-font);
+    font-size: 40px;
+    font-weight: bolder;
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 25px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border-color: var(--secondary-color);
+}
+
+#stockGrid {
+    padding: 2px;
+    width: 100%;
+}
+
+#stockInfoOne, #stockInfoTwo, #stockInfoThree {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 30px;
 }
 
