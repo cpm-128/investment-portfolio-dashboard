@@ -495,17 +495,24 @@ var calculatePortfolioPerformance = function() {
 
     // calculation
     var calculation = (regMarketChange1 * sharesHeld1) + (regMarketChange2 * sharesHeld2) + (regMarketChange3 * sharesHeld3) + (regMarketChange4 * sharesHeld4) + (regMarketChange5 * sharesHeld5);
-        console.log(">> regMarketChange1 >>" , regMarketChange1 , (">> sharesHeld1 >>") , sharesHeld1 , ">> mult >>" , regMarketChange1*sharesHeld1);
-        console.log(">> regMarketChange2 >>" , regMarketChange2 , (">> sharesHeld2 >>") , sharesHeld2 , ">> mult >>" , regMarketChange2*sharesHeld2);
-        console.log(">> regMarketChange3 >>" , regMarketChange3 , (">> sharesHeld3 >>") , sharesHeld3 , ">> mult >>" , regMarketChange3*sharesHeld3);
-        console.log(">> regMarketChange4 >>" , regMarketChange4 , (">> sharesHeld4 >>") , sharesHeld4 , ">> mult >>" , regMarketChange4*sharesHeld4);
-        console.log(">> regMarketChange5 >>" , regMarketChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , regMarketChange5*sharesHeld5);
-        console.log(">> portfolio performance calculation >>" , calculation);
+        // console.log(">> regMarketChange1 >>" , regMarketChange1 , (">> sharesHeld1 >>") , sharesHeld1 , ">> mult >>" , regMarketChange1*sharesHeld1);
+        // console.log(">> regMarketChange2 >>" , regMarketChange2 , (">> sharesHeld2 >>") , sharesHeld2 , ">> mult >>" , regMarketChange2*sharesHeld2);
+        // console.log(">> regMarketChange3 >>" , regMarketChange3 , (">> sharesHeld3 >>") , sharesHeld3 , ">> mult >>" , regMarketChange3*sharesHeld3);
+        // console.log(">> regMarketChange4 >>" , regMarketChange4 , (">> sharesHeld4 >>") , sharesHeld4 , ">> mult >>" , regMarketChange4*sharesHeld4);
+        // console.log(">> regMarketChange5 >>" , regMarketChange5 , (">> sharesHeld5 >>") , sharesHeld5 , ">> mult >>" , regMarketChange5*sharesHeld5);
+        // console.log(">> portfolio performance calculation >>" , calculation);
 
     // append to page
     var portfolioPerformanceCalculationEl = document.createElement("p");
-    portfolioPerformanceCalculationEl.textContent = (calculation*100).toFixed(2) + "%";
-    portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
+    if (!calculation) {
+        // console.log(">> PERFORMANCE UNAVAILABLE >>")
+        portfolioPerformanceCalculationEl.textContent = "";
+        portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
+    } else {
+        // console.log(">> performance available >>")
+        portfolioPerformanceCalculationEl.textContent = (calculation*100).toFixed(2) + "%";
+        portfolioPerformanceEl.append(portfolioPerformanceCalculationEl);
+    };
 
     // color code based on +/-
     if (calculation > 0) {
@@ -562,8 +569,8 @@ var getMarketPerf = function() {
 
 // when page reloads, load and display inputs and fetched data from localStorage
 window.onload = function loadInputs() {
+    // Stock 1
     if (localStorage.getItem("stockTicker1")!=null) {
-        // Stock 1
         document.querySelector("#stock-input-1").value = localStorage.getItem("stockTicker1");
         document.querySelector("#shares-input-1").value = localStorage.getItem("sharesHeld1");
         var stockNameEl = document.createElement("h3");
@@ -584,9 +591,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock1El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker2")!=null) {
-        // Stock 2
+    };
+    // Stock 2
+    if (localStorage.getItem("stockTicker2")!=null) {
         document.querySelector("#stock-input-2").value = localStorage.getItem("stockTicker2");
         document.querySelector("#shares-input-2").value = localStorage.getItem("sharesHeld2");
         var stockNameEl = document.createElement("h3");
@@ -607,9 +614,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock2El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker3")!=null) {
-        // Stock 3
+    };
+    // Stock 3
+    if (localStorage.getItem("stockTicker3")!=null) {
         document.querySelector("#stock-input-3").value = localStorage.getItem("stockTicker3");
         document.querySelector("#shares-input-3").value = localStorage.getItem("sharesHeld3");
         var stockNameEl = document.createElement("h3");
@@ -630,9 +637,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock3El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker4")!=null) {
-        // Stock 4
+    };
+    // Stock 4
+    if (localStorage.getItem("stockTicker4")!=null) {
         document.querySelector("#stock-input-4").value = localStorage.getItem("stockTicker4");
         document.querySelector("#shares-input-4").value = localStorage.getItem("sharesHeld4");
         var stockNameEl = document.createElement("h3");
@@ -653,9 +660,9 @@ window.onload = function loadInputs() {
         } else {
             displayStock4El.setAttribute("class" , "performance-negative");
         }
-    }
-    else if (localStorage.getItem("stockTicker5")!=null) {
-        // Stock 5
+    };
+    // Stock 5
+    if (localStorage.getItem("stockTicker5")!=null) {
         document.querySelector("#stock-input-5").value = localStorage.getItem("stockTicker5");
         document.querySelector("#shares-input-5").value = localStorage.getItem("sharesHeld5");
         var stockNameEl = document.createElement("h3");
