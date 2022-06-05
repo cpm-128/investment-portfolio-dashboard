@@ -394,7 +394,7 @@ var getUserStock5 = function(stockName) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b239052929msh610a70ac1b2dcccp119d5bjsna0af27722d38'
+            'X-RapidAPI-Key': '3bca220b3amshe09cc433a6e6d37p1499c9jsne0c1fead04e7'
         }
     };
     var yhFinanceApiUrl = "https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=" + stockName + "&region=US" ;
